@@ -13,15 +13,16 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: MM
-email:
+title: Pranav Pant
+email: pantpranav3@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-twitter_username: username
-github_username: username
-minimal_mistakes_skin: default
+  AI & ML Engineer with experience shipping high-accuracy NLP systems, 
+  trained a custom NER on 600k PII-tagged samples to reach 99.9% accuracy, 
+  and built scalable retrieval/agentic systems (Graph-RAG, multi-agent orchestration). 
+  Published author (8 papers, 2 Best Paper awards).
+# twitter_username: username
+github_username: PranavDS-codes
+minimal_mistakes_skin: dark
 search: true
 
 # Build settings
@@ -31,11 +32,15 @@ url: "https://pranavds-codes.github.io"
 baseurl: "/portfolio"
 repository: "PranavDS-codes/portfolio"
 
+# Custom scripts (external links handler)
+after_footer_scripts:
+  - /assets/js/custom.js
+
 # Outputting
 permalink: /:categories/:title/
-paginate: 5 # amount of posts to show
-paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+# paginate: 0 # amount of posts to show
+# paginate_path: /page:num/
+timezone: America/Phoenix
 
 include:
   - _pages
@@ -62,34 +67,34 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
-  avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  name   : "Pranav Pant"
+  avatar : "/assets/images/Headshot-torso.jpg"
+  bio    : "AI & ML Engineer with experience shipping high-accuracy NLP systems, trained a custom NER on 600k PII-tagged samples to reach 99.9% accuracy, and built scalable retrieval/agentic systems (Graph-RAG, multi-agent orchestration). Published author (8 papers, 2 Best Paper awards)."
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+    - label: "Resume"
+      icon: "fas fa-fw fa-file-pdf"
+      url: "/portfolio/assets/resume/PranavPant2026.pdf"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/pranav-pant-ds"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/PranavDS-codes"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:pantpranav3@gmail.com"
 
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/pranav-pant-ds"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/PranavDS-codes"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "mailto:pantpranav3@gmail.com"
 
 defaults:
   # _posts
@@ -100,8 +105,8 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: true
-      share: true
+      comments: false
+      share: false
       related: true
   # _pages
   - scope:
@@ -110,6 +115,7 @@ defaults:
     values:
       layout: single
       author_profile: true
+      classes: wide
 
 category_archive:
   type: liquid

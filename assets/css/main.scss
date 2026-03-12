@@ -1,0 +1,53 @@
+// ---
+// # Only the main Sass file needs front matter (the dashes are enough).
+// # Import the theme's styles, then add overrides below.
+// ---
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+/* ==========================================================
+   PART B — Wider layout & better spacing
+   ========================================================== */
+
+/* 1. Increase the max-width of the overall page wrapper on large screens.
+      Default Minimal Mistakes $max-width is ~1280px ($x-large). */
+.page {
+  @media (min-width: 80em) {
+    /* ≈1280px */
+    max-width: 1440px;
+    padding-right: 1.5em;
+    padding-left: 1.5em;
+  }
+}
+
+/* 2. Let the wide-layout pages fill even more. */
+.wide .page__inner-wrap {
+  max-width: 100%;
+}
+
+/* 3. Reduce the sidebar gutter so content gets more room. */
+.sidebar.sticky {
+  @media (min-width: 64em) {
+    padding-right: 0.5em;
+  }
+}
+
+/* 4. Homepage section spacing — add breathing room between major blocks. */
+.page__content {
+
+  h1,
+  h2 {
+    margin-top: 2em;
+  }
+
+  hr {
+    margin: 2.5em 0;
+  }
+}
+
+/* 5. Keep line-length readable even with wider container. */
+.page__content p,
+.page__content li {
+  max-width: 75ch;
+}
