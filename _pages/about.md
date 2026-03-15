@@ -2,6 +2,7 @@
 layout: single
 title: About Me
 permalink: /about/
+classes: wide
 ---
 I'm an AI & Machine Learning Engineer with a 4.0 GPA, specializing in scalable NLP and Deep Learning pipelines. I have a proven track record of building high-accuracy LLM systems and architecting secure ML workflows. As a published author of 8 peer-reviewed research articles (with 2 Best Paper Awards), I combine academic rigor with practical MLOps experience to deliver production-grade AI solutions.
 

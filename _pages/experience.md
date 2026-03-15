@@ -2,6 +2,7 @@
 layout: single
 title: Experience
 permalink: /experience/
+classes: wide
 ---
 ## Rocket Lawyer
 **Data Engineering Intern (ML/NLP Focus)** | *San Francisco, CA (Remote)* | *Jun 2025 – Aug 2025*

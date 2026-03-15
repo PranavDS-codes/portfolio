@@ -2,6 +2,7 @@
 layout: single
 title: Work / Projects
 permalink: /projects/
+classes: wide
 ---
 ## Self-Correcting Graph-RAG Engine
 *Jan 2026 - Present* | [Repository](#)

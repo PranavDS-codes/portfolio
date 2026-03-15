@@ -2,6 +2,7 @@
 layout: single
 title: Skills
 permalink: /skills/
+classes: wide
 ---
 ## Programming Languages
 - Python, SQL

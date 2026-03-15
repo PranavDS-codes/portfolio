@@ -2,6 +2,7 @@
 layout: single
 title: Writing & Notes
 permalink: /writing/
+classes: wide
 ---
 Welcome to my notebook! Here, I share insights from my journey in AI, Machine Learning, and MLOps.
 

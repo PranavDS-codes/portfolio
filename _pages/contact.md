@@ -2,6 +2,7 @@
 layout: single
 title: Contact
 permalink: /contact/
+classes: wide   
 ---
 I'm always open to discussing new opportunities, collaborations on AI/ML projects, or simply having a chat about the latest in intelligent systems and NLP.
 
