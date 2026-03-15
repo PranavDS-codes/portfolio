@@ -83,6 +83,9 @@ author:
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
       url: "mailto:pantpranav3@gmail.com"
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?hl=en&user=4rTkN4QAAAAJ"
 
 footer:
   links:
@@ -95,6 +98,9 @@ footer:
     - label: "Email"
       icon: "fas fa-fw fa-envelope"
       url: "mailto:pantpranav3@gmail.com"
+    - label: "Google Scholar"
+      icon: "fas fa-fw fa-graduation-cap"
+      url: "https://scholar.google.com/citations?hl=en&user=4rTkN4QAAAAJ"
 
 defaults:
   # _posts

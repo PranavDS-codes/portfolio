@@ -5,7 +5,7 @@ permalink: /projects/
 classes: wide
 ---
 ## Self-Correcting Graph-RAG Engine
-*Jan 2026 - Present* | [Repository](#)
+*Jan 2026 - Present* | [Repository](https://github.com/PranavDS-codes/RAG)
 
 - Architected an **Agentic Graph-RAG system** using **LangGraph** that integrates **FAISS** vector search with **NetworkX** knowledge graphs, achieving a **97% Hit Rate** and **99.6% Relevance**.
 - Engineered a self-correcting retrieval pipeline with an "Auditor" agent that dynamically validates data freshness and triggers fallback web search (Tavily) to eliminate hallucinations.
@@ -16,7 +16,7 @@ classes: wide
 ---
 
 ## LLM Council
-*Dec 2025 - Jan 2026* | [Live Demo](#)
+*Dec 2025 - Jan 2026* | [Live Demo](https://llm-council-three.vercel.app/)
 
 - Engineered an asynchronous multi-agent orchestration system using **FastAPI** and **asyncio**, orchestrating 5 concurrent AI personas to debate queries and reduce hallucination.
 - Designed a deterministic control flow using **Pydantic** to enforce strict JSON schemas for inter-agent communication, enabling reliable execution and automatic error recovery.
