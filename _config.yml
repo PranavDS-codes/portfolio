@@ -16,13 +16,12 @@
 title: Pranav Pant
 email: pantpranav3@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  AI & ML Engineer with experience shipping high-accuracy NLP systems, 
-  trained a custom NER on 600k PII-tagged samples to reach 99.9% accuracy, 
-  and built scalable retrieval/agentic systems (Graph-RAG, multi-agent orchestration). 
-  Published author (8 papers, 2 Best Paper awards).
+  AI & ML Engineer building reliable NLP, retrieval, and agentic systems with a
+  production mindset. Recent work spans Graph-RAG, high-accuracy NER, evaluation
+  pipelines, and multi-agent orchestration.
 # twitter_username: username
 github_username: PranavDS-codes
-minimal_mistakes_skin: dark
+minimal_mistakes_skin: default
 search: true
 
 # Build settings
@@ -69,7 +68,7 @@ plugins:
 author:
   name   : "Pranav Pant"
   avatar : "/assets/images/Headshot-torso.jpg"
-  bio    : "AI & ML Engineer with experience shipping high-accuracy NLP systems, trained a custom NER on 600k PII-tagged samples to reach 99.9% accuracy, and built scalable retrieval/agentic systems (Graph-RAG, multi-agent orchestration). Published author (8 papers, 2 Best Paper awards)."
+  bio    : "AI & ML Engineer focused on dependable NLP, retrieval, and agentic systems."
   links:
     - label: "Resume"
       icon: "fas fa-fw fa-file-pdf"
@@ -120,7 +119,7 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true
+      author_profile: false
       classes: wide
 
 category_archive:
