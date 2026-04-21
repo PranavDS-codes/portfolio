@@ -16,38 +16,41 @@ classes: wide
   <article class="project-card">
     <div class="project-card__header">
       <div>
-        <p class="project-card__meta">Jan 2026 – Present</p>
-        <h3>Self-Correcting Graph-RAG Engine</h3>
+        <p class="project-card__meta">Dec 2025 – Apr 2026 · Personal Project</p>
+        <h3>Agentic Graph-RAG: The Brain</h3>
       </div>
       <a class="project-card__link" href="https://github.com/PranavDS-codes/RAG">Repository</a>
     </div>
 
     <p class="project-card__summary">
-      Architected an agentic Graph-RAG system that combines vector search, knowledge graphs, and self-auditing retrieval logic to improve both relevance and trust.
+      Built a self-correcting RAG platform that treats retrieval as a decision-making workflow. The system decomposes queries, searches across dense, sparse, and graph signals, audits whether internal evidence is sufficient, and dynamically expands to Wikipedia or live web search when needed.
     </p>
 
     <div class="card-grid card-grid--two">
       <article class="info-card info-card--compact">
         <h4>Why it mattered</h4>
-        <p>Retrieval quality often breaks when context is stale or evidence is weak. This system was designed to detect those cases instead of silently returning bad answers.</p>
+        <p>Most RAG pipelines fail when internal retrieval is shallow or stale. I wanted a system that could detect those gaps, verify external evidence, and refine its search plan before answering instead of hallucinating confidently.</p>
       </article>
       <article class="info-card info-card--compact">
         <h4>Outcome</h4>
-        <p>Reached 97% hit rate and 99.6% relevance with a retrieval stack tuned for high-signal evidence selection.</p>
+        <p>On a 100-question judged benchmark, the system improved hit rate from 82% to 92%, faithfulness from 0.708 to 0.847, and relevance from 0.604 to 0.796 over a naive RAG baseline.</p>
       </article>
     </div>
 
     <ul class="feature-list">
-      <li>Built with LangGraph, FAISS, and NetworkX to fuse dense retrieval with knowledge graph reasoning</li>
-      <li>Added an auditor agent to validate freshness and trigger fallback search when confidence drops</li>
-      <li>Improved ranking with HyDE, Reciprocal Rank Fusion, BM25, and cross-encoder reranking</li>
+      <li>Designed a LangGraph workflow around a shared state machine with LLM-based query decomposition, HyDE passages, and sub-query-specific metadata</li>
+      <li>Built a tri-hybrid retrieval stack combining FAISS dense search, BM25 keyword search, and Neo4j graph traversal, followed by reranking with NVIDIA NIM and local fallback</li>
+      <li>Implemented audit, verification, and refinement loops that decide when internal evidence is insufficient, route to Wikipedia or Tavily web search, and retry with a materially better search plan</li>
+      <li>Added provider failover, deep trace logging, and a benchmark harness spanning retrieval metrics plus LLM-judge scores for faithfulness, relevance, utility, and semantic similarity</li>
     </ul>
 
     <div class="tag-row">
       <span class="tag-chip">Python</span>
       <span class="tag-chip">LangGraph</span>
       <span class="tag-chip">FAISS</span>
-      <span class="tag-chip">NetworkX</span>
+      <span class="tag-chip">BM25</span>
+      <span class="tag-chip">Neo4j</span>
+      <span class="tag-chip">Tavily</span>
       <span class="tag-chip">Hybrid Retrieval</span>
     </div>
   </article>
