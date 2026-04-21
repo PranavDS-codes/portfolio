@@ -4,6 +4,7 @@ excerpt: "Adding more specialized agents can improve coverage, but without messa
 layout: single
 classes: wide
 author_profile: false
+date: 2025-12-20
 ---
 Multi-agent systems are attractive because they promise specialization. One agent can critique, another can plan, another can retrieve, and another can synthesize. In theory, this division of labor should produce better outcomes than a single monolithic model call.
 

@@ -15,13 +15,13 @@ classes: wide
 
   <section class="section-block">
     <div class="section-heading">
-      <p class="eyebrow">Recent Notes</p>
-      <h2>Three practical pieces from the systems side of AI</h2>
+      <p class="eyebrow">All Notes</p>
+      <h2>Snapshots of every article and technical note I’ve published here</h2>
       <p>Each note is written from an implementation perspective: what tends to break, what is worth instrumenting, and which design choices create better outcomes over time.</p>
     </div>
 
     <div class="post-grid">
-      {% for post in site.posts limit: 3 %}
+      {% for post in site.posts %}
       <article class="post-card">
         <p class="post-card__meta">{{ post.date | date: "%B %-d, %Y" }}</p>
         <h3><a class="text-link" href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>

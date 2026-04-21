@@ -4,6 +4,7 @@ excerpt: "Strong entity recognition is necessary in privacy-sensitive NLP workfl
 layout: single
 classes: wide
 author_profile: false
+date: 2025-07-21
 ---
 When teams build privacy-aware NLP pipelines, the first number everyone asks about is model accuracy. That makes sense. If the system is responsible for detecting personally identifiable information, poor detection quality creates obvious risk.
 

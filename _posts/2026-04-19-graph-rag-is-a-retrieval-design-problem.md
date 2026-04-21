@@ -4,6 +4,7 @@ excerpt: "Graph-RAG works best when the graph is treated as a way to structure e
 layout: single
 classes: wide
 author_profile: false
+date: 2026-04-21
 ---
 Most Graph-RAG discussions start with the graph itself: how entities are extracted, how edges are formed, and how traversal should work. That is useful, but it can obscure the more important point. In practice, Graph-RAG succeeds or fails based on retrieval design, not graph novelty.
 

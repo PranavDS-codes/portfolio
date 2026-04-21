@@ -49,8 +49,8 @@ classes: wide
       <p class="metric-card__label">NER accuracy on a 600k-sample anonymization pipeline</p>
     </article>
     <article class="metric-card">
-      <span class="metric-card__value">97%</span>
-      <p class="metric-card__label">Hit rate on a self-correcting Graph-RAG retrieval engine</p>
+      <span class="metric-card__value">92%</span>
+      <p class="metric-card__label">Retrieval hit rate on a 100-question benchmark for my agentic Graph-RAG system</p>
     </article>
     <article class="metric-card">
       <span class="metric-card__value">8</span>
@@ -68,14 +68,26 @@ classes: wide
     <div class="card-grid card-grid--projects">
       <article class="feature-card">
         <p class="feature-card__meta">Graph-RAG · LangGraph · Retrieval</p>
-        <h3>Self-Correcting Graph-RAG Engine</h3>
-        <p>Built a retrieval stack that combines vector search, knowledge graphs, auditing, and reranking to improve both hit rate and trustworthiness.</p>
+        <h3>Agentic Graph-RAG: The Brain</h3>
+        <p>Built a self-correcting retrieval system that audits evidence sufficiency, expands to web and Wikipedia when needed, verifies supporting snippets, and refines failed searches before answering.</p>
         <ul class="feature-list">
-          <li>97% retrieval hit rate with 99.6% relevance</li>
-          <li>Auditor agent triggers fallback search on stale or weak evidence</li>
-          <li>Hybrid retrieval with HyDE, RRF, BM25, and cross-encoder reranking</li>
+          <li>Hit rate improved from 82% to 92% on a judged benchmark</li>
+          <li>Hybrid retrieval with FAISS, BM25, Neo4j, and reranking</li>
+          <li>Audit, verification, and refinement loops reduce unsupported answers</li>
         </ul>
         <a class="text-link" href="{{ '/projects/' | relative_url }}">Explore project details</a>
+      </article>
+
+      <article class="feature-card">
+        <p class="feature-card__meta">Legal AI · FastAPI · Backend Systems</p>
+        <h3>Legal Sentinel</h3>
+        <p>Built a contract analysis backend that converts legal PDFs into structured sections, clause-reference graphs, risk findings, executive reports, and run-scoped grounded chat.</p>
+        <ul class="feature-list">
+          <li>Dual-parser PDF extraction with heuristic quality routing</li>
+          <li>Regex plus LLM-verified graph construction for clause references</li>
+          <li>Run-local retrieval prevents cross-document chat leakage</li>
+        </ul>
+        <a class="text-link" href="{{ '/projects/' | relative_url }}">See the backend architecture</a>
       </article>
 
       <article class="feature-card">
