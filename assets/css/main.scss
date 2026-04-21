@@ -69,7 +69,7 @@ body {
 
 .page {
   @media (min-width: 80em) {
-    max-width: 1680px;
+    max-width: 2000px;
     padding-right: 2.25em;
     padding-left: 2.25em;
   }
@@ -488,8 +488,18 @@ h4 {
   box-shadow: var(--shadow);
 }
 
-.contact-hero .btn--primary {
-  box-shadow: 0 14px 32px rgba(15, 118, 110, 0.22);
+.contact-hero .btn--primary,
+.contact-hero .btn--primary:visited {
+  background: linear-gradient(135deg, #14213d, #22345d);
+  border: 1px solid rgba(20, 33, 61, 0.2);
+  color: #fff;
+  box-shadow: 0 14px 32px rgba(20, 33, 61, 0.24);
+}
+
+.contact-hero .btn--primary:hover,
+.contact-hero .btn--primary:focus {
+  background: linear-gradient(135deg, #0f1a31, #1a2a4d);
+  color: #fff;
 }
 
 .cta-panel--compact {
