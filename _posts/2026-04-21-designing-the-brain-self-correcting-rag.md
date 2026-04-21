@@ -4,6 +4,7 @@ excerpt: "Building The Brain taught me that reliable RAG is less about adding on
 layout: single
 classes: wide
 author_profile: false
+date: 2026-01-25
 ---
 When I started building **The Brain**, I was not trying to make a more decorative RAG demo. I wanted to answer a more useful question: *what does it take to make a retrieval system notice when it is not ready to answer yet?*
 
