@@ -58,6 +58,48 @@ classes: wide
   <article class="project-card">
     <div class="project-card__header">
       <div>
+        <p class="project-card__meta">Apr 2026 · Personal / Capstone Project</p>
+        <h3>Legal Sentinel</h3>
+      </div>
+      <a class="project-card__link" href="https://github.com/PranavDS-codes/DSE_CAPSTONE">Repository</a>
+    </div>
+
+    <p class="project-card__summary">
+      Built a backend-first AI contract analysis system that ingests legal PDFs, extracts structured sections, resolves clause references into a graph, runs graph-aware risk analysis, generates an executive report, and supports grounded chat scoped to a single contract run.
+    </p>
+
+    <div class="card-grid card-grid--two">
+      <article class="info-card info-card--compact">
+        <h4>Why it mattered</h4>
+        <p>Contract risk is rarely isolated to one paragraph. Important exposure is often hidden across definitions, overrides, exhibits, and cross-referenced clauses, which makes flat summarization unreliable for serious review.</p>
+      </article>
+      <article class="info-card info-card--compact">
+        <h4>What stands out</h4>
+        <p>The system combines deterministic parsing, schema-validated LLM stages, graph construction, file-backed run orchestration, and run-local retrieval so the backend stays inspectable instead of behaving like a black-box PDF chatbot.</p>
+      </article>
+    </div>
+
+    <ul class="feature-list">
+      <li>Designed a staged FastAPI backend for upload handling, status polling, cancellation, artifact serving, and streaming contract-grounded chat</li>
+      <li>Built a dual-parser extraction flow with PyMuPDF and pdfplumber, routing to the higher-quality text path using heuristic scoring rather than trusting one parser blindly</li>
+      <li>Constructed section objects, page mappings, regex-based clause references, and LLM-assisted edge verification to build a clause-reference graph before risk analysis</li>
+      <li>Implemented graph-aware risk analysis, executive report generation, custom NumPy/JSON vector indexing, and run-scoped retrieval to prevent cross-document leakage in chat</li>
+    </ul>
+
+    <div class="tag-row">
+      <span class="tag-chip">Python</span>
+      <span class="tag-chip">FastAPI</span>
+      <span class="tag-chip">Legal AI</span>
+      <span class="tag-chip">Document Intelligence</span>
+      <span class="tag-chip">PDF Parsing</span>
+      <span class="tag-chip">Graph-Based Reasoning</span>
+      <span class="tag-chip">Pydantic</span>
+    </div>
+  </article>
+
+  <article class="project-card">
+    <div class="project-card__header">
+      <div>
         <p class="project-card__meta">Dec 2025 – Jan 2026</p>
         <h3>LLM Council</h3>
       </div>

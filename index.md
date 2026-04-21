@@ -79,6 +79,18 @@ classes: wide
       </article>
 
       <article class="feature-card">
+        <p class="feature-card__meta">Legal AI · FastAPI · Backend Systems</p>
+        <h3>Legal Sentinel</h3>
+        <p>Built a contract analysis backend that converts legal PDFs into structured sections, clause-reference graphs, risk findings, executive reports, and run-scoped grounded chat.</p>
+        <ul class="feature-list">
+          <li>Dual-parser PDF extraction with heuristic quality routing</li>
+          <li>Regex plus LLM-verified graph construction for clause references</li>
+          <li>Run-local retrieval prevents cross-document chat leakage</li>
+        </ul>
+        <a class="text-link" href="{{ '/projects/' | relative_url }}">See the backend architecture</a>
+      </article>
+
+      <article class="feature-card">
         <p class="feature-card__meta">Agents · FastAPI · Orchestration</p>
         <h3>LLM Council</h3>
         <p>Designed a multi-agent debate system with structured schemas, concurrency, and tracing to make model outputs easier to inspect and trust.</p>
