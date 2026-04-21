@@ -25,12 +25,12 @@ classes: wide
   <article class="contact-card">
     <h3>LinkedIn</h3>
     <p>Reach out for professional networking, recruiter messages, or collaboration.</p>
-    <a class="text-link" href="https://www.linkedin.com/in/pranav-pant-ds">linkedin.com/in/pranav-pant-ds</a>
+    <a class="text-link" href="https://www.linkedin.com/in/pranav-pant-ds">View LinkedIn profile</a>
   </article>
 
   <article class="contact-card">
     <h3>GitHub</h3>
     <p>Browse repositories, experiments, and implementation-focused work.</p>
-    <a class="text-link" href="https://github.com/PranavDS-codes">github.com/PranavDS-codes</a>
+    <a class="text-link" href="https://github.com/PranavDS-codes">Explore GitHub projects</a>
   </article>
 </section>

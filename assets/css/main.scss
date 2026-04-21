@@ -59,9 +59,9 @@ body {
 
 .page {
   @media (min-width: 80em) {
-    max-width: 1440px;
-    padding-right: 1.5em;
-    padding-left: 1.5em;
+    max-width: 1680px;
+    padding-right: 2.25em;
+    padding-left: 2.25em;
   }
 }
 
@@ -108,12 +108,25 @@ h4 {
 }
 
 .page__content {
-  font-size: 1.04rem;
+  font-size: 1.02rem;
 }
 
-.page__content p,
-.page__content li {
-  max-width: 74ch;
+.page__content > p,
+.page__content > ul,
+.page__content > ol,
+.page__content > dl,
+.page__content > blockquote {
+  max-width: 80ch;
+}
+
+.page__content li,
+.page__content section p,
+.page__content section li,
+.page__content div p,
+.page__content div li,
+.page__content article p,
+.page__content article li {
+  max-width: none;
 }
 
 .page__content a {
@@ -171,6 +184,7 @@ h4 {
 }
 
 .btn,
+.btn:visited,
 .btn:hover,
 .btn:focus {
   border-radius: 999px;
@@ -178,16 +192,20 @@ h4 {
   text-decoration: none;
 }
 
-.btn--primary {
+.btn--primary,
+.btn--primary:visited {
   background: linear-gradient(135deg, #0f766e, #0a5d57);
+  color: #fff;
 }
 
 .btn--primary:hover,
 .btn--primary:focus {
   background: linear-gradient(135deg, #0c655e, #084d47);
+  color: #fff;
 }
 
-.btn--light-outline {
+.btn--light-outline,
+.btn--light-outline:visited {
   background: rgba(255, 255, 255, 0.4);
   border: 1px solid rgba(20, 33, 61, 0.14);
   color: var(--ink);
@@ -206,10 +224,10 @@ h4 {
 
 .portfolio-hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-  gap: 2rem;
+  grid-template-columns: minmax(0, 1.28fr) minmax(320px, 0.92fr);
+  gap: 2.3rem;
   align-items: center;
-  padding: clamp(1.5rem, 4vw, 2.5rem);
+  padding: clamp(1.8rem, 4vw, 3rem);
   border: 1px solid var(--line);
   border-radius: calc(var(--radius-lg) + 8px);
   background:
@@ -221,8 +239,8 @@ h4 {
 
 .portfolio-hero h1 {
   margin: 0;
-  font-size: clamp(2.8rem, 6vw, 5.2rem);
-  line-height: 0.96;
+  font-size: clamp(2.5rem, 4.8vw, 4.6rem);
+  line-height: 0.98;
 }
 
 .portfolio-hero__visual {
@@ -234,7 +252,7 @@ h4 {
 
 .portrait-card {
   position: relative;
-  width: min(100%, 400px);
+  width: min(100%, 440px);
   padding: 1rem;
   overflow: hidden;
   border: 1px solid rgba(20, 33, 61, 0.08);
@@ -310,7 +328,7 @@ h4 {
 .metric-grid,
 .card-grid {
   display: grid;
-  gap: 1.2rem;
+  gap: 1.4rem;
 }
 
 .metric-grid {
@@ -333,7 +351,7 @@ h4 {
 .skill-card,
 .contact-card,
 .highlight-panel {
-  padding: 1.4rem;
+  padding: 1.55rem;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
   background: var(--surface);
@@ -372,8 +390,8 @@ h4 {
 .contact-hero h2 {
   margin-top: 0;
   margin-bottom: 0.6rem;
-  font-size: clamp(1.8rem, 4vw, 3rem);
-  line-height: 1.02;
+  font-size: clamp(1.7rem, 3.3vw, 2.6rem);
+  line-height: 1.08;
 }
 
 .feature-card h3,
@@ -385,7 +403,7 @@ h4 {
 .highlight-panel h3 {
   margin-top: 0;
   margin-bottom: 0.55rem;
-  font-size: 1.45rem;
+  font-size: 1.3rem;
 }
 
 .feature-list {
@@ -406,6 +424,8 @@ h4 {
   color: var(--accent-strong);
   font-weight: 700;
   text-decoration: none;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .text-link:hover,
@@ -454,6 +474,10 @@ h4 {
   box-shadow: var(--shadow);
 }
 
+.contact-hero .btn--primary {
+  box-shadow: 0 14px 32px rgba(15, 118, 110, 0.22);
+}
+
 .cta-panel--compact {
   margin-top: 1.2rem;
 }
@@ -490,6 +514,65 @@ h4 {
 .timeline-entry__role,
 .contact-card p {
   color: var(--ink-soft);
+}
+
+.contact-card,
+.contact-card a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.writing-shell {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.post-card {
+  display: grid;
+  gap: 0.9rem;
+  padding: 1.55rem;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 20px 50px rgba(20, 33, 61, 0.08);
+}
+
+.post-card__meta {
+  margin: 0;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.post-card h3 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.post-card p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.post-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.post-card__time {
+  color: var(--ink-soft);
+  font-size: 0.9rem;
 }
 
 .timeline {
@@ -575,7 +658,8 @@ h4 {
 @media (max-width: 80em) {
   .card-grid--projects,
   .card-grid--three,
-  .metric-grid {
+  .metric-grid,
+  .post-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -588,7 +672,8 @@ h4 {
   .card-grid--two,
   .card-grid--projects,
   .card-grid--three,
-  .metric-grid {
+  .metric-grid,
+  .post-grid {
     grid-template-columns: 1fr;
   }
 
@@ -615,6 +700,7 @@ h4 {
   .info-card,
   .skill-card,
   .contact-card,
+  .post-card,
   .timeline-entry__card,
   .cta-panel,
   .contact-hero {
@@ -622,6 +708,6 @@ h4 {
   }
 
   .portfolio-hero h1 {
-    font-size: clamp(2.2rem, 13vw, 3.2rem);
+    font-size: clamp(2.2rem, 13vw, 3rem);
   }
 }
