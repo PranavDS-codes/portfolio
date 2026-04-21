@@ -39,6 +39,16 @@ body {
   border-bottom: 1px solid rgba(20, 33, 61, 0.08);
 }
 
+@media (min-width: 80em) {
+  #main,
+  .masthead__inner-wrap,
+  .breadcrumbs,
+  .page__footer footer,
+  .search-content__inner-wrap {
+    max-width: 2000px;
+  }
+}
+
 .greedy-nav {
   background: transparent;
 }
@@ -79,6 +89,10 @@ body {
 
 .page__inner-wrap {
   margin-top: 2.5rem;
+}
+
+.page__content {
+  width: 100%;
 }
 
 .page__title,
