@@ -81,13 +81,13 @@ classes: wide
       <article class="feature-card">
         <p class="feature-card__meta">Legal AI · FastAPI · Backend Systems</p>
         <h3>Legal Sentinel</h3>
-        <p>Built a contract analysis backend that converts legal PDFs into structured sections, clause-reference graphs, risk findings, executive reports, and run-scoped grounded chat.</p>
+        <p>Built and deployed a contract analysis app that turns legal PDFs into structured sections, clause graphs, risk-ranked review outputs, executive summaries, and grounded follow-up chat.</p>
         <ul class="feature-list">
           <li>Dual-parser PDF extraction with heuristic quality routing</li>
-          <li>Regex plus LLM-verified graph construction for clause references</li>
+          <li>Interactive clause graph and guided review workspace</li>
           <li>Run-local retrieval prevents cross-document chat leakage</li>
         </ul>
-        <a class="text-link" href="{{ '/projects/' | relative_url }}">See the backend architecture</a>
+        <a class="text-link" href="https://bored26-legal-sentinel.hf.space/">Try Legal Sentinel</a>
       </article>
 
       <article class="feature-card">
