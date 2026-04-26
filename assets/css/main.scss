@@ -527,6 +527,12 @@ h4 {
   gap: 1rem;
 }
 
+.project-card__links {
+  display: grid;
+  justify-items: end;
+  gap: 0.45rem;
+}
+
 .project-card__summary {
   margin-top: 0.8rem;
   font-size: 1.06rem;
