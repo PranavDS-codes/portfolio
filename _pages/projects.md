@@ -61,6 +61,7 @@ classes: wide
         <p class="project-card__meta">Apr 9, 2026 – Present · Deployed Capstone Project</p>
         <h3>Legal Sentinel</h3>
       </div>
+      <a class="project-card__link" href="https://bored26-legal-sentinel.hf.space/">Try Legal Sentinel</a>
     </div>
 
     <p class="project-card__summary">
