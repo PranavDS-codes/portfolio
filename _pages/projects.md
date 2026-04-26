@@ -61,17 +61,15 @@ classes: wide
         <p class="project-card__meta">Apr 9, 2026 – Present · Deployed Capstone Project</p>
         <h3>Legal Sentinel</h3>
       </div>
-      <a class="project-card__link" href="https://bored26-legal-sentinel.hf.space/">Try Legal Sentinel</a>
+      <div class="project-card__links">
+        <a class="project-card__link" href="https://bored26-legal-sentinel.hf.space/">Try Legal Sentinel</a>
+        <a class="project-card__link" href="https://github.com/PranavDS-codes/DSE_CAPSTONE">GitHub</a>
+      </div>
     </div>
 
     <p class="project-card__summary">
       Built and deployed a backend-first AI contract analysis system that turns a legal PDF into a guided review workspace: extract sections, build a clause relationship graph, analyze risk, generate an executive review, and ask grounded follow-up questions against contract-specific artifacts.
     </p>
-
-    <div class="button-row">
-      <a class="btn btn--primary" href="https://bored26-legal-sentinel.hf.space/">Try Legal Sentinel</a>
-      <a class="btn btn--light-outline" href="https://github.com/PranavDS-codes/DSE_CAPSTONE">GitHub</a>
-    </div>
 
     <p class="muted-copy"><strong>First public deployment:</strong> April 26, 2026. The current live app supports PDF upload, contract parsing, clause graphing, risk-ranked review, executive reporting, grounded chat, guided progress/status UI, and multi-model chat selection.</p>
 
@@ -112,7 +110,10 @@ classes: wide
         <p class="project-card__meta">Dec 2025 – Jan 2026</p>
         <h3>LLM Council</h3>
       </div>
-      <a class="project-card__link" href="https://llm-council-three.vercel.app/">Live Demo</a>
+      <div class="project-card__links">
+        <a class="project-card__link" href="https://llm-council-three.vercel.app/">Try LLM Council</a>
+        <a class="project-card__link" href="https://github.com/PranavDS-codes/LLM-Council">GitHub</a>
+      </div>
     </div>
 
     <p class="project-card__summary">
