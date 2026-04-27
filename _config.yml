@@ -67,7 +67,7 @@ plugins:
 
 author:
   name   : "Pranav Pant"
-  avatar : "/assets/images/Headshot-torso1.jpg"
+  avatar : "/assets/images/Headshot-torso.jpeg"
   bio    : "AI & ML Engineer focused on dependable NLP, retrieval, and agentic systems."
   links:
     - label: "Resume"

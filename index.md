@@ -29,7 +29,7 @@ classes: wide
     <div class="portfolio-hero__visual">
       <div class="portrait-card">
         <div class="portrait-card__glow"></div>
-        <img src="{{ '/assets/images/Headshot-torso1.jpg' | relative_url }}" alt="Portrait of Pranav Pant">
+        <img src="{{ '/assets/images/Headshot-torso.jpeg' | relative_url }}" alt="Portrait of Pranav Pant">
         <div class="portrait-card__caption">
           <strong>Based in Arizona</strong>
           <span>Open to ML, AI platform, and applied research roles.</span>
