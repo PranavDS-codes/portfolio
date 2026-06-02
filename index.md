@@ -14,7 +14,7 @@ classes: wide
       </p>
       <div class="button-row">
         <a class="btn btn--primary btn--large" href="{{ '/projects/' | relative_url }}">View Projects</a>
-        <a class="btn btn--light-outline btn--large" href="{{ '/assets/resume/PranavPant2026.pdf' | relative_url }}">Download Resume</a>
+        <a class="btn btn--light-outline btn--large" href="{{ site.resume_url }}" target="_blank" rel="noopener">Download Resume</a>
         <a class="btn btn--light-outline btn--large" href="{{ '/contact/' | relative_url }}">Get In Touch</a>
       </div>
       <div class="tag-row">
