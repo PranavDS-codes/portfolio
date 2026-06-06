@@ -30,6 +30,7 @@ remote_theme: mmistakes/minimal-mistakes
 url: "https://pranavds-codes.github.io"
 baseurl: "/portfolio"
 repository: "PranavDS-codes/portfolio"
+resume_url: "https://drive.google.com/file/d/1obwNsO6gPpH4kzMLkmSUhBozXEpxUHAa/view?usp=sharing"
 
 # Custom scripts (external links handler)
 after_footer_scripts:
@@ -47,14 +48,8 @@ include:
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - assets/resume/PranavPant2026.pdf
 
 # Plugins (previously gems:)
 plugins:
@@ -72,7 +67,7 @@ author:
   links:
     - label: "Resume"
       icon: "fas fa-fw fa-file-pdf"
-      url: "/portfolio/assets/resume/PranavPant2026.pdf"
+      url: "https://drive.google.com/file/d/1obwNsO6gPpH4kzMLkmSUhBozXEpxUHAa/view?usp=sharing"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/pranav-pant-ds"
