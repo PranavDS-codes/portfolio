@@ -79,6 +79,18 @@ classes: wide
       </article>
 
       <article class="feature-card">
+        <p class="feature-card__meta">Medical RAG · FastAPI · Hybrid Retrieval</p>
+        <h3>Brown Heart Assistant</h3>
+        <p>Built a citation-first medical FAQ assistant that helps doctors and domain experts answer repeated educational questions with grounded responses, citations, safety refusals, and retrieval diagnostics.</p>
+        <ul class="feature-list">
+          <li>Hybrid BM25, local embedding, NVIDIA embedding, RRF, and reranking pipeline</li>
+          <li>Confidence and safety policy classifies answerable, partial, unsupported, and refusal cases</li>
+          <li>Streaming doctor-demo UI with citations, retrieval traces, model stats, and password-gated access</li>
+        </ul>
+        <a class="text-link" href="https://brown-heart-assistant.onrender.com/">Try Brown Heart Assistant</a>
+      </article>
+
+      <article class="feature-card">
         <p class="feature-card__meta">Legal AI · FastAPI · Backend Systems</p>
         <h3>Legal Sentinel</h3>
         <p>Built and deployed a contract analysis app that turns legal PDFs into structured sections, clause graphs, risk-ranked review outputs, executive summaries, and grounded follow-up chat.</p>

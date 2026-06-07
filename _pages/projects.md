@@ -58,6 +58,50 @@ classes: wide
   <article class="project-card">
     <div class="project-card__header">
       <div>
+        <p class="project-card__meta">Jun 2026 – Present · Deployed Medical AI Project</p>
+        <h3>Brown Heart Assistant</h3>
+      </div>
+      <a class="project-card__link" href="https://brown-heart-assistant.onrender.com/">Try Brown Heart Assistant</a>
+    </div>
+
+    <p class="project-card__summary">
+      Built a citation-first medical FAQ automation platform that helps doctors and domain experts answer repeated educational questions from curated Brown Heart FAQ content with grounded responses, citations, safety refusals, and retrieval diagnostics.
+    </p>
+
+    <div class="card-grid card-grid--two">
+      <article class="info-card info-card--compact">
+        <h4>Why it mattered</h4>
+        <p>Doctors and domain experts repeatedly answer similar approved educational questions, but medical FAQ automation must avoid unsupported advice and make every answer traceable to source material.</p>
+      </article>
+      <article class="info-card info-card--compact">
+        <h4>Technical approach</h4>
+        <p>The pipeline uses query expansion, BM25, local and NVIDIA embeddings, reciprocal rank fusion, reranking, confidence policy, safety classification, context-only generation, and streaming UI metadata.</p>
+      </article>
+    </div>
+
+    <ul class="feature-list">
+      <li>Engineered a citation-first medical RAG assistant with FastAPI, BM25, embeddings, RRF, reranking, confidence scoring, and safety refusals across 102 verified FAQ rows.</li>
+      <li>Built a hybrid retrieval stack combining lexical BM25, local semantic embeddings, 3 saved NVIDIA embedding indexes, medical query expansion, and citation-level diagnostics.</li>
+      <li>Implemented a confidence and safety policy that classifies responses as answerable, partial, unsupported, or refusal before generation to reduce unsupported medical claims.</li>
+      <li>Shipped a streaming doctor-demo UI with password-gated access, citations, retrieval traces, model stats, 3 configured LLM profiles, and deterministic fallback behavior validated by 40 backend tests.</li>
+    </ul>
+
+    <div class="tag-row">
+      <span class="tag-chip">FastAPI</span>
+      <span class="tag-chip">Medical RAG</span>
+      <span class="tag-chip">Hybrid Retrieval</span>
+      <span class="tag-chip">BM25</span>
+      <span class="tag-chip">Embeddings</span>
+      <span class="tag-chip">Reranking</span>
+      <span class="tag-chip">NVIDIA AI</span>
+      <span class="tag-chip">Pydantic</span>
+      <span class="tag-chip">Streaming UI</span>
+    </div>
+  </article>
+
+  <article class="project-card">
+    <div class="project-card__header">
+      <div>
         <p class="project-card__meta">Apr 9, 2026 – Present · Deployed Capstone Project</p>
         <h3>Legal Sentinel</h3>
       </div>
