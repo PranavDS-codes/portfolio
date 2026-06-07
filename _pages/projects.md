@@ -38,10 +38,10 @@ classes: wide
     </div>
 
     <ul class="feature-list">
-      <li>Designed a LangGraph workflow around a shared state machine with LLM-based query decomposition, HyDE passages, and sub-query-specific metadata</li>
-      <li>Built a tri-hybrid retrieval stack combining FAISS dense search, BM25 keyword search, and Neo4j graph traversal, followed by reranking with NVIDIA NIM and local fallback</li>
-      <li>Implemented audit, verification, and refinement loops that decide when internal evidence is insufficient, route to Wikipedia or Tavily web search, and retry with a materially better search plan</li>
-      <li>Added provider failover, deep trace logging, and a benchmark harness spanning retrieval metrics plus LLM-judge scores for faithfulness, relevance, utility, and semantic similarity</li>
+      <li>Engineered an agentic Graph-RAG assistant using LangGraph, FAISS, BM25, Neo4j, HyDE query expansion, and neural reranking across 39K chunks and a 311K-node / 374K-edge knowledge graph.</li>
+      <li>Built a self-correcting RAG workflow with LLM-based sufficiency auditing, evidence verification, Tavily/Wikipedia fallback, and bounded query-refinement loops to reduce unsupported or stale answers.</li>
+      <li>Implemented hybrid candidate generation across dense vector search, sparse BM25 retrieval, and Neo4j graph neighbors, then unified relevance scoring with NVIDIA and CrossEncoder rerankers.</li>
+      <li>Evaluated naive vs. advanced RAG on 100 judged SQuAD-style examples, improving retrieval hit rate from 0.82 to 0.92 and LLM-judged faithfulness from 0.708 to 0.847.</li>
     </ul>
 
     <div class="tag-row">
@@ -85,13 +85,11 @@ classes: wide
     </div>
 
     <ul class="feature-list">
-      <li>Designed a staged FastAPI backend for upload handling, status polling, cancellation, artifact serving, and streaming contract-grounded chat through a single deployed URL</li>
-      <li>Built a dual-parser extraction flow with PyMuPDF and pdfplumber, routing to the higher-quality text path using heuristic scoring rather than trusting one parser blindly</li>
-      <li>Constructed section objects, page mappings, regex-based clause references, and LLM-assisted edge verification to build a clause-reference graph before risk analysis</li>
-      <li>Implemented graph-aware risk analysis, section-aware executive reporting, custom NumPy/JSON vector indexing, and run-scoped retrieval to prevent cross-document leakage in chat</li>
-      <li>Tested the deployed app on sample agreement PDFs in a live hosted environment, with typical end-to-end demo runs completing in under a minute</li>
+      <li>Engineered a contract-risk AI workspace that processes PDF agreements into clause graphs, structured risk findings, executive reports, and retrieval-backed chat using FastAPI, React, NVIDIA-hosted LLMs, and embedding search.</li>
+      <li>Implemented hybrid clause graph extraction using regex reference mining plus LLM verification, enforcing known-section IDs, grounded evidence quotes, relation labels, confidence scores, and deduplication across sample contracts.</li>
+      <li>Identified 26 contract risk flags across 31 sections with 33 clause links in a sample 19-page agreement by building a graph-aware LLM risk analysis workflow that emits schema-validated risk types, severities, rationales, evidence quotes, and confidence scores.</li>
+      <li>Developed a lightweight RAG chat layer with embeddings, cosine-search indexing, artifact-aware metadata, and streaming answers over extracted sections, risk findings, and generated reports.</li>
     </ul>
-
     <div class="tag-row">
       <span class="tag-chip">Python</span>
       <span class="tag-chip">FastAPI</span>
