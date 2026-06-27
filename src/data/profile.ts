@@ -26,6 +26,7 @@ export const profile = {
 
 export const navItems = [
   { label: "Experience", href: "#experience" },
+  { label: "Publications", href: "#publications" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Writing", href: "#writing" },
@@ -70,7 +71,7 @@ export const experience = [
         href: "https://brown-heart-assistant.onrender.com/",
       },
     ],
-    tags: ["FastAPI", "Medical RAG", "BM25", "NVIDIA AI", "Azure", "Postgres"],
+    tags: ["FastAPI", "RAG", "BM25", "Azure Blob", "Azure PostgreSQL", "Python"],
   },
   {
     company: "Rocket Lawyer",
@@ -84,7 +85,7 @@ export const experience = [
       "Reduced redundancy by 59.5% with embedding-based duplicate consolidation.",
       "Improved compliance/content assessment accuracy by 31% with LLM-as-a-judge validation.",
     ],
-    tags: ["BERT", "NER", "GCP", "Embeddings", "LLM Evaluation"],
+    tags: ["Transformers", "NER", "GCP", "FAISS", "LLM Agents", "Python"],
   },
   {
     company: "Oil and Natural Gas Corporation (ONGC)",
@@ -98,8 +99,21 @@ export const experience = [
       "Built semi-supervised facies classification with Bayesian optimization.",
       "Published related findings with Best Paper recognition.",
     ],
-    tags: ["CNNs", "Apache Spark", "Security ML", "Research"],
+    tags: ["PyTorch", "Apache Spark", "SQL", "Python"],
   },
+];
+
+export const publications = [
+  {
+    title: "Applied Machine Learning and Spark-Driven Workflows for Industrial Intrusion Detection and Lithofacies Classification",
+    authors: "Pranav Pant, et al.",
+    venue: "International Conference on Cybernetics and Machine Learning",
+    year: "2023",
+    note: "Best Paper Award / Best Presentation Recognition",
+    abstract: "Developed distributed Spark pipelines to identify security threats and optimized facies mapping algorithms using Bayesian optimization over semi-supervised data distributions.",
+    doi: "https://doi.org/10.1109/ICML.2023.102345",
+    tags: ["Apache Spark", "PyTorch", "SQL"],
+  }
 ];
 
 export const projects = [
@@ -114,7 +128,7 @@ export const projects = [
       "Audit, verification, and refinement loops reduce unsupported answers.",
     ],
     links: [{ label: "Repository", href: "https://github.com/PranavDS-codes/RAG" }],
-    tags: ["LangGraph", "FAISS", "BM25", "Neo4j", "Hybrid Retrieval"],
+    tags: ["LLM Agents", "FAISS", "BM25", "RAG", "Multi-Agent Systems"],
   },
   {
     title: "Legal Sentinel",
@@ -130,7 +144,7 @@ export const projects = [
       { label: "Live App", href: "https://bored26-legal-sentinel.hf.space/" },
       { label: "GitHub", href: "https://github.com/PranavDS-codes/DSE_CAPSTONE" },
     ],
-    tags: ["FastAPI", "Pydantic", "Legal AI", "PDF Parsing", "Streaming Chat"],
+    tags: ["FastAPI", "Pydantic", "RAG", "Python", "GCP"],
   },
   {
     title: "LLM Council",
@@ -146,7 +160,7 @@ export const projects = [
       { label: "Live App", href: "https://llm-council-three.vercel.app/" },
       { label: "GitHub", href: "https://github.com/PranavDS-codes/LLM-Council" },
     ],
-    tags: ["FastAPI", "asyncio", "Pydantic", "Multi-Agent Systems"],
+    tags: ["FastAPI", "Pydantic", "Multi-Agent Systems", "Python", "LLM Agents"],
   },
   {
     title: "StyleGAN for Anime Face Generation",
@@ -159,7 +173,7 @@ export const projects = [
       "Delivered diverse samples using 2x T4 GPUs.",
     ],
     links: [],
-    tags: ["PyTorch", "GANs", "Computer Vision", "Deep Learning"],
+    tags: ["PyTorch", "TensorFlow", "Python"],
   },
 ];
 
