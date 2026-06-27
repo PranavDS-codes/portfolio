@@ -180,7 +180,7 @@ export const projects = [
 export const skillGroups = [
   {
     title: "AI Systems",
-    skills: ["RAG", "LLM Agents", "Multi-Agent Systems", "Prompt Engineering", "Transformers", "NER"],
+    skills: ["RAG", "LLM Agents", "Multi-Agent Systems", "Prompt Engineering", "Transformers", "NER", "Codex", "Antigravity", "Claude Code"],
   },
   {
     title: "Engineering",

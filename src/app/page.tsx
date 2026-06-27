@@ -9,6 +9,7 @@ import { Section } from "@/components/Section";
 import { SkillGrid } from "@/components/SkillGrid";
 import { WritingList } from "@/components/WritingList";
 import { Publications } from "@/components/Publications";
+import { AskPranav } from "@/components/AskPranav";
 import { experience, projects } from "@/data/profile";
 
 export default function Home() {
@@ -40,6 +41,10 @@ export default function Home() {
               </Reveal>
 
               <MetricStrip />
+
+              <div className="mb-10">
+                <AskPranav />
+              </div>
 
               <Section
                 id="experience"
