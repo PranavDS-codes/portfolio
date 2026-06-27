@@ -1,5 +1,8 @@
+"use client";
+
 import { externalLinkProps } from "@/lib/utils";
 import { StaggerItem } from "./Motion";
+import { useHoverSync } from "./HoverSyncProvider";
 
 type ProjectItemProps = {
   item: {
@@ -13,13 +16,32 @@ type ProjectItemProps = {
 };
 
 export function ProjectItem({ item }: ProjectItemProps) {
+  const { hoveredSkill } = useHoverSync();
+
+  // Check if any tag of this project matches the hovered skill
+  const hasMatchingSkill = hoveredSkill
+    ? item.tags.some((tag) => tag.toLowerCase() === hoveredSkill.toLowerCase())
+    : false;
+
   return (
     <StaggerItem>
-      <article className="group border-b border-line py-6 transition hover:border-violet/50">
+      <article
+        className={`group border-b py-6 transition-all duration-300 ${
+          hasMatchingSkill
+            ? "border-violet/70 bg-violet/5 -translate-y-1 shadow-[0_4px_20px_rgba(167,139,250,0.08)] px-4 rounded-3xl"
+            : "border-line hover:border-violet/50"
+        }`}
+      >
         <div className="flex flex-wrap items-start justify-between gap-4">
           <div>
             <p className="text-[0.68rem] font-bold uppercase tracking-[0.22em] text-violet">{item.meta}</p>
-            <h3 className="mt-2 text-lg font-black tracking-tight text-white transition group-hover:text-violet">{item.title}</h3>
+            <h3
+              className={`mt-2 text-lg font-black tracking-tight transition duration-300 ${
+                hasMatchingSkill ? "text-violet" : "text-white group-hover:text-violet"
+              }`}
+            >
+              {item.title}
+            </h3>
           </div>
           <div className="flex flex-wrap gap-3">
             {item.links.map((link) => (
@@ -46,13 +68,24 @@ export function ProjectItem({ item }: ProjectItemProps) {
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
-          {item.tags.map((tag) => (
-            <span key={tag} className="rounded-full bg-violet/10 px-3 py-1 text-xs font-semibold text-violet">
-              {tag}
-            </span>
-          ))}
+          {item.tags.map((tag) => {
+            const isTagMatch = hoveredSkill?.toLowerCase() === tag.toLowerCase();
+            return (
+              <span
+                key={tag}
+                className={`rounded-full px-3 py-1 text-xs font-semibold transition-all duration-300 ${
+                  isTagMatch
+                    ? "bg-violet text-ink font-bold shadow-[0_0_12px_rgba(167,139,250,0.5)]"
+                    : "bg-violet/10 text-violet"
+                }`}
+              >
+                {tag}
+              </span>
+            );
+          })}
         </div>
       </article>
     </StaggerItem>
   );
 }
+
