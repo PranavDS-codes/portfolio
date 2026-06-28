@@ -3,19 +3,23 @@ import { profile } from "@/data/profile";
 import { externalLinkProps } from "@/lib/utils";
 import { ContactForm } from "./ContactForm";
 import { FloatingNav } from "./FloatingNav";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function IntroRail() {
   return (
     <aside className="scrollbar-clean md:sticky md:top-0 md:flex md:h-screen md:flex-col md:justify-between md:overflow-hidden md:py-7 md:pr-1 lg:py-10 lg:pr-2">
       <div className="md:shrink-0">
-        <div className="flex items-center gap-4">
-          <div className="relative h-16 w-16 overflow-hidden rounded-2xl border border-line bg-panel md:h-14 md:w-14 lg:h-[4.5rem] lg:w-[4.5rem]">
-            <Image src={profile.headshot} alt="Portrait of Pranav Pant" fill sizes="72px" className="object-cover object-[center_18%]" priority />
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div className="relative h-16 w-16 overflow-hidden rounded-2xl border border-line bg-panel md:h-14 md:w-14 lg:h-[4.5rem] lg:w-[4.5rem]">
+              <Image src={profile.headshot} alt="Portrait of Pranav Pant" fill sizes="72px" className="object-cover object-[center_18%]" priority />
+            </div>
+            <div>
+              <p className="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-teal">Portfolio</p>
+              <h1 className="mt-1 text-2xl font-black tracking-tight text-white md:text-[1.65rem] lg:text-3xl">{profile.name}</h1>
+            </div>
           </div>
-          <div>
-            <p className="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-teal">Portfolio</p>
-            <h1 className="mt-1 text-2xl font-black tracking-tight text-white md:text-[1.65rem] lg:text-3xl">{profile.name}</h1>
-          </div>
+          <ThemeToggle />
         </div>
 
         <div className="mt-6 max-w-xl md:mt-4 lg:mt-6">

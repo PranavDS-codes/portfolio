@@ -5,17 +5,28 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#050816",
-        night: "#08111f",
-        panel: "#0d1728",
-        line: "rgba(148, 163, 184, 0.18)",
-        slateSoft: "#94a3b8",
-        teal: "#2dd4bf",
-        violet: "#a78bfa",
-        amber: "#fbbf24",
+        ink: "var(--bg-primary)",
+        night: "var(--bg-primary)",
+        panel: "var(--bg-secondary)",
+        line: "var(--border-line)",
+        slateSoft: "var(--text-secondary)",
+        teal: "var(--color-teal)",
+        violet: "var(--color-violet)",
+        amber: "var(--color-amber)",
+        slate: {
+          50: "var(--text-primary)",
+          100: "var(--text-primary)",
+          200: "var(--text-primary)",
+          300: "var(--text-secondary)",
+          400: "var(--text-muted)",
+          500: "var(--text-light-muted)",
+          600: "var(--text-border-muted)",
+          700: "var(--text-border-muted)",
+        },
+        white: "rgb(var(--color-white-raw) / <alpha-value>)",
       },
       boxShadow: {
-        glow: "0 0 80px rgba(45, 212, 191, 0.12)",
+        glow: "var(--shadow-glow)",
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   description:
     "AI & ML Engineer building reliable NLP, retrieval, RAG, and multi-agent systems with production-minded engineering.",
   metadataBase: new URL("https://pranavpant.vercel.app"),
+  icons: {
+    icon: "/images/headshot.jpeg",
+  },
   openGraph: {
     title: "Pranav Pant | AI & ML Engineer",
     description:
@@ -17,6 +20,24 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var savedTheme = localStorage.getItem('theme');
+                  if (savedTheme === 'light') {
+                    document.documentElement.classList.add('light');
+                  } else {
+                    document.documentElement.classList.remove('light');
+                  }
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className="bg-ink font-sans text-slate-200 antialiased">{children}</body>
     </html>
   );
