@@ -37,27 +37,33 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     id: "experience-jhf",
     section: "Experience",
     title: "Brown Heart Assistant at Joshi Health Foundation",
-    snippet: "Pranav worked as an AI/Data Engineering Intern and Volunteer at Joshi Health Foundation / Brown Heart. He built and deployed the Brown Heart Assistant from scratch as a full-stack, citation-grounded health education platform serving 5,000+ users. He developed FAQ and MASALA Study RAG agents using source-grounded prompts, citations, confidence gating, and medical-safety refusals.",
+    snippet: "Pranav has worked as an AI/Data Engineering Intern and Volunteer at Joshi Health Foundation / Brown Heart since May 2026. He built and deployed the Brown Heart Assistant (BHAI) from scratch as a full-stack, citation-grounded health education platform serving 5,000+ users, alongside a separate searchable FAQ website. He built a router-orchestrated multi-agent architecture spanning FAQ, MASALA Study, Instagram, YouTube, and movie-timestamp agents, each using source-grounded prompts, confidence gating, and medical-safety refusals.",
     href: "https://bhai.thebrownheart.com/"
   },
   {
     id: "experience-jhf-tech",
     section: "Experience",
     title: "Brown Heart Technical Stack",
-    snippet: "For the Brown Heart Assistant, Pranav implemented a hybrid retrieval pipeline using BM25, FastEmbed/NVIDIA embeddings, reciprocal rank fusion (RRF), reranking, and streamed cited responses. The production backend includes artifact hydration with Azure Blob artifacts, Azure PostgreSQL row/chunk hydration, checksum validation, and environment-based model configs.",
+    snippet: "For the Brown Heart Assistant, Pranav implemented hybrid retrieval using BM25, Azure PostgreSQL/pgvector, HNSWlib, and NVIDIA embeddings/reranking, unified with reciprocal rank fusion (RRF) and streamed via Azure OpenAI for chat generation. He built MCP-style human-in-the-loop (HITL) tool interfaces that trigger on low-confidence medical queries for doctor-specialty matching, clinician contact, or appointment booking. The production backend includes Azure Blob artifact hydration, checksum validation, signed sessions, admin health checks, environment-based model config, LangSmith tracing across agent runs and retrieval scores, and 113 passing tests.",
     href: "https://bhai.thebrownheart.com/"
   },
   {
     id: "experience-rocket-lawyer",
     section: "Experience",
     title: "Rocket Lawyer Data Engineering",
-    snippet: "Pranav was a Data Engineering Intern (ML/NLP Focus) at Rocket Lawyer in San Francisco, CA (Remote). He built a modular NLP data-quality pipeline for legal Q&A content, combining anonymization, semantic deduplication, and LLM-based validation. He fine-tuned a BERT-based NER model for PII anonymization across 600K+ tagged samples, achieving 99.9% NER accuracy, and reduced data redundancy by 59.5% with embedding-based deduplication.",
+    snippet: "Pranav was a Data Engineering Intern (ML/NLP Focus) at Rocket Lawyer in San Francisco, CA (Remote). He built a modular NLP data-quality pipeline for Rocket Lawyer's 'Ask a Lawyer' dataset, processing 3,000+ Q&A pairs through PII anonymization, semantic deduplication, and LLM-based validation to feed Rocket Copilot. He fine-tuned a BERT-based NER model for PII anonymization across 600K+ tagged samples, reduced data redundancy by 59.5% with embedding-based deduplication, and improved compliance/content assessment accuracy by 31% with a two-layer LLM-as-a-judge validation framework using Google Cloud and Vertex AI.",
   },
   {
     id: "experience-ongc",
     section: "Experience",
     title: "Oil and Natural Gas Corporation (ONGC)",
-    snippet: "Pranav worked as a Summer Intern at ONGC in Uttarakhand, India. He designed CNN and Spark-based intrusion detection workflows and built a semi-supervised lithofacies classification system using Bayesian optimization. His research outcomes on security ML and facies classification were published across conference and journal venues.",
+    snippet: "Pranav worked as a Summer Intern at ONGC in Uttarakhand, India. He designed CNN and Spark-based intrusion detection workflows, including a CNN-based malware detector achieving 95%+ accuracy, and built a semi-supervised lithofacies classification system using Bayesian optimization over well-log data. He also developed scalable feature-engineering workflows for packet-stream and well-log data. His research outcomes on security ML and facies classification were published across conference and journal venues.",
+  },
+  {
+    id: "profile-education",
+    section: "Education",
+    title: "Education",
+    snippet: "Pranav Pant is pursuing an M.S. in Data Science at Arizona State University (Aug 2024 - May 2026, Tempe, AZ) with a 4.00/4.00 GPA. He holds a B.Tech in Computer Science & Engineering from Kalinga Institute of Industrial Technology (Aug 2020 - Apr 2024, Odisha, India) with a 9.52/10.00 GPA.",
   },
   {
     id: "publication-spark-lithofacies",
@@ -67,17 +73,61 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     href: "https://doi.org/10.1109/ICML.2023.102345"
   },
   {
+    id: "publication-dl-intrusion-comparison",
+    section: "Publications",
+    title: "Comparative Study of Deep Learning for Intrusion Detection",
+    snippet: "Pranav co-authored 'A Comparative Study of Deep Learning Techniques for Network Intrusion Detection', published at the International Conference on Emerging Systems and Intelligent Computing (2024). The paper compares deep learning architectures for network intrusion detection across cloud-scale traffic datasets.",
+    href: "https://ieeexplore.ieee.org/document/10481540"
+  },
+  {
+    id: "publication-hybrid-ids-ensemble",
+    section: "Publications",
+    title: "Hybrid Ensemble Intrusion Detection Systems",
+    snippet: "Pranav co-authored 'Optimising Intrusion Detection Systems: A Hybrid Approach with Ensemble Machine Learning Models', published in Cluster Computing (2025). The paper proposes a hybrid ensemble framework combining signature-based detection with interpretable meta-ensemble classifiers to improve generalization and robustness of intrusion detection systems.",
+  },
+  {
+    id: "publication-software-security-ml",
+    section: "Publications",
+    title: "Software Security via Machine Learning",
+    snippet: "Pranav co-authored the book chapter 'Empowering Software Security: Leveraging Machine Learning for Anomaly Detection and Threat Prevention' in Boosting Software Development Using Machine Learning (2025), examining how machine-learning techniques integrate with software security practices for anomaly detection and threat prevention.",
+  },
+  {
+    id: "publication-secure-data-centres",
+    section: "Publications",
+    title: "Secure Information and Data Centres",
+    snippet: "Pranav co-authored the book chapter 'Secure Information and Data Centres: An Exploratory Study' in Predictive Data Security Using AI (Springer, 2022), exploring strategies for securing sensitive information and data centre infrastructure against cyber-attack vectors.",
+  },
+  {
+    id: "publication-demystifying-intrusion",
+    section: "Publications",
+    title: "Demystifying Intrusion Detection Model Interpretability",
+    snippet: "Pranav co-authored 'Demystifying Intrusion Detection: A Path to Enhanced Model Understanding', published in the Utkal University Journal of Computing & Communication (2024), investigating interpretability techniques to improve trust in intrusion detection model decisions.",
+  },
+  {
+    id: "publication-well-logs-catboost",
+    section: "Publications",
+    title: "Categorical Boosting for Well-Log Classification",
+    snippet: "Pranav co-authored 'Multi-class Imbalanced Classification on Well Logs Using Categorical Boosting Approach', published at the 14th Biennial International Conference and Exposition (SPG, 2024), applying categorical boosting to improve lithofacies prediction accuracy on skewed subsurface well-log datasets.",
+  },
+  {
+    id: "publication-sdn-image-datasets",
+    section: "Publications",
+    title: "Image Datasets for AI/ML in Software-Defined Networking",
+    snippet: "Pranav co-authored 'From Pixels to Insights: Image Datasets for AI/ML in Software-Defined Networking', published at the OITS International Conference on Information Technology (OCIT, 2023), surveying image dataset construction for AI/ML-driven intrusion detection in software-defined networking.",
+    href: "https://ieeexplore.ieee.org/abstract/document/10430538"
+  },
+  {
     id: "project-graph-rag",
     section: "Projects",
     title: "Agentic Graph-RAG: The Brain",
-    snippet: "Pranav built 'Agentic Graph-RAG: The Brain', a self-correcting retrieval system that audits evidence sufficiency, expands searches to web/Wikipedia when needed, verifies supporting snippets, and refines failed queries before answering. It utilizes hybrid retrieval with FAISS, BM25, Neo4j, and reranking, improving the retrieval hit rate from 82% to 92% on a judged benchmark.",
+    snippet: "Pranav built 'Agentic Graph-RAG: The Brain', a self-correcting LangGraph agent that audits evidence sufficiency, expands searches to web/Wikipedia via Tavily when needed, verifies supporting snippets, and refines failed queries with HyDE query expansion before answering. It uses hybrid retrieval across FAISS/Pinecone dense vectors, BM25, and a 311K-node / 374K-edge Neo4j knowledge graph over 39K chunks, unified with NVIDIA and Cross-Encoder reranking. On 100 judged SQuAD-style examples it improved retrieval hit rate from 82% to 92% and LLM-judged faithfulness from 0.708 to 0.847.",
     href: "https://github.com/PranavDS-codes/RAG"
   },
   {
     id: "project-legal-sentinel",
     section: "Projects",
     title: "Legal Sentinel",
-    snippet: "Legal Sentinel is a deployed contract analysis app built by Pranav. It parses legal PDFs using a dual-parser with heuristic quality routing and transforms them into structured sections, clause graphs, risk-ranked reviews, and executive summaries. It features a run-local retrieval setup that prevents cross-document chat leaks and supports streamed grounded Q&A.",
+    snippet: "Legal Sentinel is a deployed contract analysis app built by Pranav using FastAPI and NVIDIA-hosted LLMs. It parses legal PDFs using a dual-parser with heuristic quality routing and transforms them into structured sections, clause graphs, risk-ranked reviews, and executive summaries. On a sample 19-page agreement it identified 26 risk flags across 31 sections with 33 clause links via a graph-aware LLM risk analysis workflow. It features a run-local retrieval setup that prevents cross-document chat leaks and supports streamed grounded Q&A.",
     href: "https://bored26-legal-sentinel.hf.space/"
   },
   {
@@ -97,13 +147,13 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     id: "skills-ai-systems",
     section: "Skills",
     title: "AI & ML System Skills",
-    snippet: "Pranav's AI and ML Systems skillset includes RAG, LLM Agents, Multi-Agent Systems, Prompt Engineering, Transformers, NER, PyTorch, TensorFlow, FAISS, BM25, LLM evaluation, Codex (OpenAI), Antigravity (Google), and Claude Code (Anthropic).",
+    snippet: "Pranav's AI and ML Systems skillset includes RAG, Graph-RAG, LLM Agents, Multi-Agent Systems, HITL Escalation, LLM-as-a-judge, Prompt Engineering, NLP, Transformers, NER, PyTorch, TensorFlow, Hybrid Retrieval, FAISS, Pinecone, Neo4j, BM25, Cross-Encoder Reranking, LangChain, LangGraph, LLM evaluation, Codex (OpenAI), Antigravity (Google), and Claude Code (Anthropic).",
   },
   {
     id: "skills-engineering-cloud",
     section: "Skills",
     title: "Software Engineering & Cloud Skills",
-    snippet: "Pranav's software engineering and deployment stack includes Python, SQL, FastAPI, Pydantic, Docker, Linux, Git, GCP, Azure Blob, Azure PostgreSQL, Hugging Face, Vercel, and Render.",
+    snippet: "Pranav's software engineering and deployment stack includes Python, SQL, FastAPI, Pydantic, Docker, Linux, Git, GCP, Vertex AI, OpenAI API, LangSmith, Azure Blob, Azure PostgreSQL, Hugging Face, Vercel, and Render.",
   },
   {
     id: "profile-rag-reliability",
