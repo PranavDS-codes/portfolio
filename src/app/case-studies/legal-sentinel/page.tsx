@@ -80,9 +80,9 @@ export default function LegalSentinelCaseStudy() {
         <p>On a sample contract, the pipeline identified:</p>
         <CaseStudyStats
           stats={[
-            { value: "48", label: "Risk flags identified" },
-            { value: "53", label: "Sections structurally extracted" },
-            { value: "30", label: "Clause links in the reference graph" },
+            { value: "18", label: "Risk flags identified" },
+            { value: "111", label: "Sections structurally extracted" },
+            { value: "69", label: "Clause links in the reference graph" },
             { value: "<60s", label: "Typical end-to-end runtime, upload to full review" },
           ]}
         />

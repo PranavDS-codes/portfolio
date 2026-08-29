@@ -229,7 +229,7 @@ export const projects = [
       "A deployed contract analysis app that turns legal PDFs into structured sections, clause graphs, risk-ranked review outputs, executive summaries, and grounded follow-up chat.",
     bullets: [
       "Dual-parser PDF extraction with heuristic quality routing.",
-      "Identified 48 risk flags across 53 sections with 30 clause links in a sample contract via a graph-aware LLM risk analysis workflow.",
+      "Identified 18 risk flags across 111 sections with 69 clause links in a sample contract via a graph-aware LLM risk analysis workflow.",
       "Interactive clause graph and guided review workspace.",
       "Run-local retrieval prevents cross-document chat leakage.",
     ],
@@ -308,7 +308,7 @@ export const caseStudies = [
     slug: "legal-sentinel",
     title: "Legal Sentinel",
     meta: "Legal AI · Clause Graphs · Document Intelligence",
-    summary: "Turning a contract into a risk-ranked clause graph — 48 flags, 53 sections, 30 links, under 60s — without ever letting documents leak across sessions.",
+    summary: "Turning a contract into a risk-ranked clause graph — 18 flags, 111 sections, 69 links, under 60s — without ever letting documents leak across sessions.",
     tags: ["FastAPI", "NVIDIA", "RAG"],
   },
 ];
