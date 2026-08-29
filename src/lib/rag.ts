@@ -34,7 +34,7 @@ function cosineSimilarity(a: number[], b: number[]): number {
   return dotProduct(a, b) / (magA * magB);
 }
 
-const STOP_WORDS = new Set(["what", "is", "how", "who", "are", "do", "does", "did", "to", "the", "a", "an", "and", "or", "in", "on", "at", "for", "with", "about", "his", "pranav", "pranav's", "pant", "s"]);
+const STOP_WORDS = new Set(["what", "is", "how", "who", "are", "do", "does", "did", "to", "the", "a", "an", "and", "or", "in", "on", "at", "for", "with", "about", "his", "he", "him", "her", "she", "they", "them", "their", "it", "its", "pranav", "pranav's", "pant", "s"]);
 
 function calculateKeywordScore(query: string, snippet: string): number {
   const queryWords = query.toLowerCase().replace(/[^\w\s]/g, "").split(/\s+/).filter(w => w && !STOP_WORDS.has(w));
@@ -119,8 +119,12 @@ export async function answerQuestion(question: string): Promise<AskResult> {
     })
     .sort((a, b) => b.score - a.score);
 
-  // Filter by similarity threshold
-  const threshold = 0.22;
+  // Filter by similarity threshold. Calibrated against nvidia/nemotron-3-embed-1b's actual
+  // score distribution: off-topic queries top out around 0.05-0.08 dense similarity, while
+  // genuinely relevant but lexically-mismatched queries (e.g. "what is his expertise?" vs a
+  // chunk that says "skillset") score 0.20-0.30. 0.12 keeps clear separation from noise while
+  // no longer requiring keyword overlap to carry a relevant match over the line.
+  const threshold = 0.12;
   const topEntries = scoredEntries.filter((entry) => entry.score >= threshold).slice(0, 5);
 
   if (topEntries.length === 0) {

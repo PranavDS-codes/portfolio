@@ -76,7 +76,7 @@ export default function Home() {
                 id="publications"
                 eyebrow="Publications"
                 title="Research & Academic Contributions"
-                intro="Best Paper-winning research on distributed ML pipelines and Lithofacies classification, plus 7 earlier papers in applied ML and security available on Google Scholar."
+                intro="Two Best Paper awards across 8 publications in applied ML, security, and geoscience — the rest available on Google Scholar."
               >
                 <Publications />
               </Section>
