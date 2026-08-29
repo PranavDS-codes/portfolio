@@ -8,6 +8,7 @@ export const profile = {
   headshot: "/images/headshot.jpeg",
   bio: "I build reliable AI systems across NLP, retrieval, and agentic workflows, with an emphasis on grounded outputs, evaluation, and production-minded engineering.",
   focus: ["retrieval systems", "multi-agent workflows", "applied NLP"],
+  scholarUrl: "https://scholar.google.com/citations?user=eToK3kMAAAAJ&hl=en",
   socials: [
     {
       label: "GitHub",
@@ -30,7 +31,7 @@ export const navItems = [
   { label: "Publications", href: "#publications" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
-  { label: "Writing", href: "#writing" },
+  { label: "Case Studies", href: "#case-studies" },
 ];
 
 export const education = [
@@ -139,6 +140,7 @@ export const publications = [
     authors: "Pranav Pant, et al.",
     venue: "International Conference on Cybernetics and Machine Learning",
     year: "2023",
+    featured: true,
     note: "Best Paper Award / Best Presentation Recognition",
     abstract: "Developed distributed Spark pipelines to identify security threats and optimized facies mapping algorithms using Bayesian optimization over semi-supervised data distributions.",
     doi: "https://doi.org/10.1109/ICML.2023.102345",
@@ -285,20 +287,26 @@ export const skillGroups = [
   },
 ];
 
-export const writing = [
+export const caseStudies = [
   {
-    title: "Legal Sentinel is now live",
-    date: "Apr 26, 2026",
-    summary: "Notes on turning a legal AI prototype into a deployed contract-review workspace.",
+    slug: "graph-rag",
+    title: "Agentic Graph-RAG: The Brain",
+    meta: "Graph-RAG · LangGraph · Self-Correction",
+    summary: "How a self-correcting retrieval loop pushed hit rate from 82% to 92% and faithfulness from 0.708 to 0.847 — and what naive RAG kept getting wrong.",
+    tags: ["LangGraph", "Neo4j", "FAISS", "RAG"],
   },
   {
-    title: "Designing The Brain: self-correcting RAG",
-    date: "Apr 21, 2026",
-    summary: "How sufficiency audits, external expansion, and verification loops improve retrieval reliability.",
+    slug: "brown-heart",
+    title: "Brown Heart Assistant",
+    meta: "Medical RAG · HITL · Multi-Agent",
+    summary: "Designing a medical Q&A assistant that knows when to refuse and hand off to a human instead of guessing — serving 5,000+ users in production.",
+    tags: ["HITL", "pgvector", "LangSmith", "Azure OpenAI"],
   },
   {
-    title: "High NER accuracy is only the start of a privacy pipeline",
-    date: "Apr 21, 2026",
-    summary: "Why anonymization needs evaluation, workflow design, and downstream data-quality checks.",
+    slug: "legal-sentinel",
+    title: "Legal Sentinel",
+    meta: "Legal AI · Clause Graphs · Document Intelligence",
+    summary: "Turning a 19-page contract into a risk-ranked clause graph — 26 flags, 31 sections, 33 links — without ever letting documents leak across sessions.",
+    tags: ["FastAPI", "NVIDIA", "RAG"],
   },
 ];
