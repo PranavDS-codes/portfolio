@@ -34,6 +34,7 @@ const SUGGESTED_PROMPTS = [
 export function AskPranav() {
   const [question, setQuestion] = useState("");
   const [loading, setLoading] = useState(false);
+  const [slow, setSlow] = useState(false);
   const [answer, setAnswer] = useState<string | null>(null);
   const [citations, setCitations] = useState<Citation[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -42,15 +43,21 @@ export function AskPranav() {
     if (!queryText.trim() || loading) return;
 
     setLoading(true);
+    setSlow(false);
     setError(null);
     setAnswer(null);
     setCitations([]);
+
+    const slowTimer = setTimeout(() => setSlow(true), 7000);
+    const controller = new AbortController();
+    const abortTimer = setTimeout(() => controller.abort(), 90000);
 
     try {
       const res = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: queryText }),
+        signal: controller.signal,
       });
 
       if (!res.ok) {
@@ -67,9 +74,16 @@ export function AskPranav() {
       }
     } catch (err: any) {
       console.error(err);
-      setError("Failed to fetch response. Please verify server status.");
+      if (err.name === "AbortError") {
+        setError("The assistant is taking unusually long to respond. Please try again in a moment.");
+      } else {
+        setError("Failed to fetch response. Please verify server status.");
+      }
     } finally {
+      clearTimeout(slowTimer);
+      clearTimeout(abortTimer);
       setLoading(false);
+      setSlow(false);
     }
   };
 
@@ -138,7 +152,9 @@ export function AskPranav() {
       {loading && (
         <div className="mt-3 rounded-xl border border-line bg-white/[0.01] p-3 text-[0.7rem] text-slate-500 flex items-center gap-2">
           <div className="h-3 w-3 animate-spin rounded-full border border-teal border-t-transparent" />
-          Embedding query & searching facts...
+          {slow
+            ? "Still working — the model is warming up on first use, this can take up to a minute..."
+            : "Embedding query & searching facts..."}
         </div>
       )}
 
