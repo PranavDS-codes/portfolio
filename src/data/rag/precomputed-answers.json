@@ -1,12 +1,19 @@
 {
   "What roles is Pranav looking for?": {
-    "answer": "Pranav is actively seeking positions in machine‑learning, AI‑platform, and applied‑research engineering roles — and he is open to both remote work and relocation for these opportunities[1].",
+    "answer": "Pranav is actively seeking positions in machine‑learning, AI platform, and applied‑research engineering roles — and he is open to both remote work and relocation for these opportunities[1][2].",
     "citations": [
       {
         "id": "profile-relocation",
         "section": "About Me",
         "title": "Relocation & Remote Work",
         "snippet": "Pranav Pant is open to remote work and is open to relocation as well for ML, AI platform, and applied research engineering roles."
+      },
+      {
+        "id": "profile-bio",
+        "section": "About Me",
+        "title": "Pranav Pant Bio",
+        "snippet": "Pranav Pant is an AI & ML Engineer based in Arizona. He builds reliable AI systems across NLP, retrieval, and agentic workflows, with a strong focus on grounded outputs, evaluation, and production-minded engineering. He is currently open to ML, AI platform, and applied research roles.",
+        "href": "mailto:pantpranav3@gmail.com"
       }
     ],
     "diagnostics": {
@@ -28,7 +35,7 @@
     }
   },
   "How to contact?": {
-    "answer": "You can reach Pranav Pant through several channels: email him at **pantpranav3@gmail.com**, connect via his professional LinkedIn profile at **https://www.linkedin.com/in/pranav-pant-ds**, or view his code repositories on GitHub at **https://github.com/PranavDS-codes**. Additionally, the site provides an interactive contact form in the left sidebar that lets you send him a direct message [1].",
+    "answer": "You can reach Pranav Pant through several channels: email him at **pantpranav3@gmail.com**, view his professional profile on **LinkedIn** at https://www.linkedin.com/in/pranav-pant-ds, or explore his code repositories on **GitHub** at https://github.com/PranavDS-codes. Additionally, the site provides an interactive contact form in the left sidebar that you can use to send him a direct message[1].",
     "citations": [
       {
         "id": "profile-contact",
@@ -43,7 +50,7 @@
     }
   },
   "Is he open to remote or relocation?": {
-    "answer": "Yes—Pranav Pant is open to both remote work and relocation for ML, AI‑platform, and applied‑research engineering roles[1]. He explicitly states he is “open to remote work and is open to relocation as well” while seeking opportunities in those areas[2].",
+    "answer": "Pranav Pant is open to both remote work and relocation for roles in ML, AI platforms, and applied research engineering [1] and he explicitly notes that he is currently seeking such opportunities [2].",
     "citations": [
       {
         "id": "profile-relocation",
@@ -64,27 +71,14 @@
     }
   },
   "What is Pranav's AI/ML toolkit?": {
-    "answer": "Pranav’s AI/ML toolkit spans a broad range of modern retrieval‑augmented generation and agentic technologies, including RAG, Graph‑RAG, LLM agents, multi‑agent systems, HITL escalation, LLM‑as‑a‑judge, prompt engineering, NLP, transformers, NER, and evaluation frameworks such as LLM evaluation and cross‑encoder reranking [1]. He also works with core deep‑learning libraries (PyTorch, TensorFlow) and retrieval back‑ends like FAISS, Pinecone, Neo4j, BM25, as well as orchestration libraries such as LangChain, LangGraph, and code‑generation models (OpenAI Codex, Google Antigravity, Anthropic Claude Code) [1]. On the engineering side, his stack includes Python, SQL, FastAPI, Pydantic, Docker, Linux, Git, and cloud services across GCP (BigQuery, Vertex AI), Azure (Blob, PostgreSQL), as well as Hugging Face, Vercel, Render, and the OpenAI API with LangSmith for monitoring [2]. Together, these tools enable him to build reliable, production‑ready AI systems for NLP, retrieval, and agentic workflows.",
-    "citations": [
-      {
-        "id": "skills-ai-systems",
-        "section": "Skills",
-        "title": "AI & ML System Skills",
-        "snippet": "Pranav's AI and ML Systems skillset includes RAG, Graph-RAG, LLM Agents, Multi-Agent Systems, HITL Escalation, LLM-as-a-judge, Prompt Engineering, NLP, Transformers, NER, PyTorch, TensorFlow, Hybrid Retrieval, FAISS, Pinecone, Neo4j, BM25, Cross-Encoder Reranking, LangChain, LangGraph, LLM evaluation, Codex (OpenAI), Antigravity (Google), and Claude Code (Anthropic)."
-      },
-      {
-        "id": "skills-engineering-cloud",
-        "section": "Skills",
-        "title": "Software Engineering & Cloud Skills",
-        "snippet": "Pranav's software engineering and deployment stack includes Python, SQL, FastAPI, Pydantic, Docker, Linux, Git, GCP, BigQuery, Vertex AI, OpenAI API, LangSmith, Azure Blob, Azure PostgreSQL, Hugging Face, Vercel, and Render."
-      }
-    ],
+    "answer": "Pranav’s AI/ML toolkit is built around a broad set of modern frameworks, libraries, and platforms.  He works with deep‑learning and NLP stacks such as **PyTorch**, **TensorFlow**, **Transformers**, **NER**, and **Prompt Engineering**, and leverages retrieval and graph‑based methods like **RAG**, **Graph‑RAG**, **Hybrid Retrieval**, **FAISS**, **Pinecone**, **Neo4j**, **BM25**, and **Cross‑Encoder reranking** [skills‑ai‑systems].  For large‑language‑model development he uses APIs and tools including **OpenAI Codex**, **Anthropic Claude Code**, **Google Antigravity**, as well as orchestration frameworks **LangChain**, **LangGraph**, and evaluation utilities like **LangSmith** [skills‑ai‑systems].  His production workflow is supported by a software‑engineering stack of **Python**, **FastAPI**, **Docker**, **GCP** services (BigQuery, Vertex AI), **Azure Blob/PostgreSQL**, and model hosting on **Hugging Face**, enabling reliable, scalable AI systems [skills‑engineering‑cloud].",
+    "citations": [],
     "diagnostics": {
       "matchedChunks": 5
     }
   },
   "Why hire Pranav for AI/ML roles?": {
-    "answer": "Pranav Pant is a seasoned AI & ML Engineer who builds reliable, production‑ready systems across NLP, retrieval, and agentic workflows, emphasizing grounded outputs and rigorous evaluation [1]. His technical toolkit spans the full AI stack—including RAG, Graph‑RAG, LLM agents, multi‑agent systems, prompt engineering, Transformers, PyTorch, TensorFlow, FAISS, Pinecone, Neo4j, LangChain, and LangGraph—ensuring he can design and deploy sophisticated models and retrieval pipelines [2]. He also brings strong software‑engineering and cloud‑deployment expertise with Python, FastAPI, Docker, GCP (BigQuery, Vertex AI), Azure services, and Hugging Face, enabling end‑to‑end model serving and scaling [3]. In addition, his research contributions, such as co‑authoring a peer‑reviewed paper on image datasets for AI/ML‑driven intrusion detection in software‑defined networking, demonstrate a solid foundation in applied AI research [4]. Finally, he is open to remote work or relocation for ML, AI platform, and applied‑research engineering roles, making him a flexible and immediately available talent for your team [5].",
+    "answer": "Pranav Pant is a proven AI & ML engineer who designs and ships reliable systems for NLP, retrieval and agentic workflows, emphasizing grounded outputs, rigorous evaluation, and production‑ready engineering [1]. His technical toolkit spans the full stack of modern AI, including RAG, Graph‑RAG, LLM agents, multi‑agent systems, prompt engineering, Transformers, PyTorch, TensorFlow, FAISS, Pinecone, Neo4j, LangChain, LangGraph, and advanced evaluation frameworks [2]; he also brings strong software‑engineering and cloud‑deployment expertise with Python, FastAPI, Docker, GCP (BigQuery, Vertex AI), Azure services, and Hugging Face [3]. His research has been recognized with two Best Paper awards, most recently for a paper on image datasets for AI/ML‑driven intrusion detection in software‑defined networking [4]. Because he is open to remote work or relocation for ML, AI‑platform, and applied‑research engineering roles, he can contribute immediately to a wide range of projects [5]. These combined strengths make him a highly qualified candidate for any AI/ML position.",
     "citations": [
       {
         "id": "profile-bio",
@@ -97,19 +91,21 @@
         "id": "skills-ai-systems",
         "section": "Skills",
         "title": "AI & ML System Skills",
-        "snippet": "Pranav's AI and ML Systems skillset includes RAG, Graph-RAG, LLM Agents, Multi-Agent Systems, HITL Escalation, LLM-as-a-judge, Prompt Engineering, NLP, Transformers, NER, PyTorch, TensorFlow, Hybrid Retrieval, FAISS, Pinecone, Neo4j, BM25, Cross-Encoder Reranking, LangChain, LangGraph, LLM evaluation, Codex (OpenAI), Antigravity (Google), and Claude Code (Anthropic)."
+        "snippet": "Pranav's AI and ML Systems skillset includes RAG, Graph-RAG, LLM Agents, Multi-Agent Systems, HITL Escalation, LLM-as-a-judge, Prompt Engineering, NLP, Transformers, NER, PyTorch, TensorFlow, Hybrid Retrieval, FAISS, Pinecone, Neo4j, BM25, Cross-Encoder Reranking, LangChain, LangGraph, LLM evaluation, Codex (OpenAI), Antigravity (Google), and Claude Code (Anthropic).",
+        "href": "/#skills"
       },
       {
         "id": "skills-engineering-cloud",
         "section": "Skills",
         "title": "Software Engineering & Cloud Skills",
-        "snippet": "Pranav's software engineering and deployment stack includes Python, SQL, FastAPI, Pydantic, Docker, Linux, Git, GCP, BigQuery, Vertex AI, OpenAI API, LangSmith, Azure Blob, Azure PostgreSQL, Hugging Face, Vercel, and Render."
+        "snippet": "Pranav's software engineering and deployment stack includes Python, SQL, FastAPI, Pydantic, Docker, Linux, Git, GCP, BigQuery, Vertex AI, OpenAI API, LangSmith, Azure Blob, Azure PostgreSQL, Hugging Face, Vercel, and Render.",
+        "href": "/#skills"
       },
       {
         "id": "publication-sdn-image-datasets",
         "section": "Publications",
         "title": "Image Datasets for AI/ML in Software-Defined Networking",
-        "snippet": "Pranav co-authored 'From Pixels to Insights: Image Datasets for AI/ML in Software-Defined Networking', published at the OITS International Conference on Information Technology (OCIT, 2023), surveying image dataset construction for AI/ML-driven intrusion detection in software-defined networking.",
+        "snippet": "Pranav co-authored 'From Pixels to Insights: Image Datasets for AI/ML in Software-Defined Networking', published at the OITS International Conference on Information Technology (OCIT, 2023), surveying image dataset construction for AI/ML-driven intrusion detection in software-defined networking. This paper received a Best Paper Award — one of Pranav's 2 Best Paper awards across his 8 publications, alongside the Lithofacies Classification paper.",
         "href": "https://ieeexplore.ieee.org/abstract/document/10430538"
       },
       {
@@ -124,7 +120,7 @@
     }
   },
   "Summarize Brown Heart Assistant.": {
-    "answer": "The Brown Heart Assistant (BHAI) is a full‑stack, citation‑grounded health‑education platform that Pranav built from scratch for the Joshi Health Foundation, now serving more than 5,000 users and complemented by a searchable FAQ site [1].  It uses a router‑orchestrated multi‑agent architecture that routes queries to specialized agents (FAQ, MASALA Study, Instagram, YouTube, movie‑timestamp) and applies source‑grounded prompts, confidence gating, and a “refuse‑and‑route” safety design for medical questions [2][1].  Retrieval is hybrid, combining BM25, Azure PostgreSQL/pgvector, HNSWlib, and NVIDIA embeddings with reciprocal‑rank‑fusion, and the chat generation is streamed via Azure OpenAI [3].  Low‑confidence medical queries trigger a human‑in‑the‑loop (HITL) escalation tool that matches doctors by specialty, contacts clinicians, or books appointments [3].  The production backend includes Azure Blob artifact hydration, checksum validation, signed sessions, admin health checks, environment‑based model configuration, LangSmith tracing across agent runs and retrieval scores, and a suite of 113 passing tests to ensure reliability [3][4].",
+    "answer": "Pranav built the Brown Heart Assistant (BHAI) from the ground up as a full‑stack, citation‑grounded health‑education platform that now serves over 5,000 users and also powers a searchable FAQ site [1]. The system uses a router‑orchestrated multi‑agent architecture that routes queries to specialized agents (FAQ, MASALA Study, Instagram, YouTube, movie‑timestamp) and applies confidence gating, source‑grounded prompts, and medical‑safety refusal filters to ensure safe answers [1]. Its retrieval layer combines BM25, Azure PostgreSQL/pgvector, HNSWlib, and NVIDIA embeddings with reciprocal‑rank‑fusion, while Azure OpenAI handles chat generation; a human‑in‑the‑loop (HITL) interface escalates low‑confidence medical queries for doctor‑specialty matching or appointment booking [2]. Production hardening includes Azure Blob artifact hydration, checksum validation, signed sessions, admin health checks, environment‑based model configuration, LangSmith tracing across agent runs and retrieval scores, and a suite of 113 passing tests [2]. In his case‑study, Pranav explains why a “refuse‑and‑route” design is essential for medical Q&A and details the HITL escalation and extensive testing that underpin the system’s reliability [3].",
     "citations": [
       {
         "id": "experience-jhf",
@@ -134,13 +130,6 @@
         "href": "https://bhai.thebrownheart.com/"
       },
       {
-        "id": "case-study-brown-heart",
-        "section": "Case Studies",
-        "title": "Case Study: Brown Heart Assistant",
-        "snippet": "Pranav wrote a full case study on the Brown Heart Assistant, covering why medical Q&A needs a 'refuse-and-route' design instead of always answering, the router-orchestrated multi-agent architecture, the HITL escalation design for low-confidence medical queries, and the production hardening (LangSmith tracing, 113 tests) behind a system serving 5,000+ users.",
-        "href": "/case-studies/brown-heart"
-      },
-      {
         "id": "experience-jhf-tech",
         "section": "Experience",
         "title": "Brown Heart Technical Stack",
@@ -148,11 +137,11 @@
         "href": "https://bhai.thebrownheart.com/"
       },
       {
-        "id": "profile-rag-reliability",
-        "section": "Projects",
-        "title": "RAG Reliability & Audits",
-        "snippet": "Pranav approaches RAG reliability by building self-correcting architectures. In projects like Agentic Graph-RAG (The Brain) and Brown Heart Assistant, he ensures high reliability using query analysis, hybrid retrieval (BM25 + vector matching), Neo4j knowledge graphs, multi-step evidence sufficiency audits, confidence gating thresholds, and medical-safety refusal filters to prevent hallucinations.",
-        "href": "/case-studies/graph-rag"
+        "id": "case-study-brown-heart",
+        "section": "Case Studies",
+        "title": "Case Study: Brown Heart Assistant",
+        "snippet": "Pranav wrote a full case study on the Brown Heart Assistant, covering why medical Q&A needs a 'refuse-and-route' design instead of always answering, the router-orchestrated multi-agent architecture, the HITL escalation design for low-confidence medical queries, and the production hardening (LangSmith tracing, 113 tests) behind a system serving 5,000+ users.",
+        "href": "/case-studies/brown-heart"
       }
     ],
     "diagnostics": {
@@ -160,7 +149,7 @@
     }
   },
   "How does he approach RAG reliability?": {
-    "answer": "Pranav tackles RAG reliability by designing self‑correcting architectures that continuously audit and refine their own retrieval results. He combines query analysis with hybrid retrieval—mixing dense vector search (FAISS/Pinecone) and classic BM25—while grounding the data in large Neo4j knowledge graphs, then runs multi‑step evidence‑sufficiency audits and applies confidence‑gating thresholds plus safety‑refusal filters to block hallucinations [1]. In his Agentic Graph‑RAG (The Brain) system, a LangGraph agent automatically expands failed queries using HyDE, pulls supplemental web/Wikipedia data via Tavily, verifies supporting snippets, and reranks results with cross‑encoders, which together lifted the hit rate from 82 % to 92 % and faithfulness from 0.708 to 0.847 [2][3].",
+    "answer": "Pranav tackles RAG reliability by designing self‑correcting architectures that continuously audit and refine their own outputs. He combines query analysis with hybrid retrieval—mixing dense vector search (FAISS/Pinecone) and BM25—while grounding results in a Neo4j knowledge graph, then runs multi‑step evidence‑sufficiency audits and applies confidence‑gating thresholds and safety‑refusal filters to block hallucinations[1]. In his Agentic Graph‑RAG (The Brain) system, a LangGraph agent expands failed queries using HyDE, pulls additional context from the web via Tavily, verifies supporting snippets, and refines queries before answering, which lifted hit rates from 82 % to 92 % and faithfulness scores from 0.708 to 0.847[2]. This layered approach—hybrid retrieval, graph grounding, evidence auditing, and automated query refinement—forms the core of his RAG reliability strategy[3].",
     "citations": [
       {
         "id": "profile-rag-reliability",

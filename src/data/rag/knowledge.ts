@@ -52,18 +52,21 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     section: "Experience",
     title: "Rocket Lawyer Data Engineering",
     snippet: "Pranav was a Data Engineering Intern (ML/NLP Focus) at Rocket Lawyer in San Francisco, CA (Remote). He built a modular NLP data-quality pipeline for Rocket Lawyer's 'Ask a Lawyer' dataset, processing 3,000+ Q&A pairs through PII anonymization, semantic deduplication, and LLM-based validation to feed Rocket Copilot. He fine-tuned a BERT-based NER model for PII anonymization across 600K+ tagged samples, reduced data redundancy by 59.5% with embedding-based deduplication, and improved compliance/content assessment accuracy by 31% with a two-layer LLM-as-a-judge validation framework using Google Cloud and Vertex AI.",
+    href: "/#experience"
   },
   {
     id: "experience-ongc",
     section: "Experience",
     title: "Oil and Natural Gas Corporation (ONGC)",
     snippet: "Pranav worked as a Summer Intern at ONGC in Uttarakhand, India. He designed CNN and Spark-based intrusion detection workflows, including a CNN-based malware detector achieving 95%+ accuracy, and built a semi-supervised lithofacies classification system using Bayesian optimization over well-log data. He also developed scalable feature-engineering workflows for packet-stream and well-log data. His research outcomes on security ML and facies classification were published across conference and journal venues.",
+    href: "/#experience"
   },
   {
     id: "profile-education",
     section: "Education",
     title: "Education",
     snippet: "Pranav Pant is pursuing an M.S. in Data Science at Arizona State University (Aug 2024 - May 2026, Tempe, AZ) with a 4.00/4.00 GPA. He holds a B.Tech in Computer Science & Engineering from Kalinga Institute of Industrial Technology (Aug 2020 - Apr 2024, Odisha, India) with a 9.52/10.00 GPA.",
+    href: "/#education"
   },
   {
     id: "publication-spark-lithofacies",
@@ -84,36 +87,41 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     section: "Publications",
     title: "Hybrid Ensemble Intrusion Detection Systems",
     snippet: "Pranav co-authored 'Optimising Intrusion Detection Systems: A Hybrid Approach with Ensemble Machine Learning Models', published in Cluster Computing (2025). The paper proposes a hybrid ensemble framework combining signature-based detection with interpretable meta-ensemble classifiers to improve generalization and robustness of intrusion detection systems.",
+    href: "https://scholar.google.com/citations?user=eToK3kMAAAAJ&hl=en"
   },
   {
     id: "publication-software-security-ml",
     section: "Publications",
     title: "Software Security via Machine Learning",
     snippet: "Pranav co-authored the book chapter 'Empowering Software Security: Leveraging Machine Learning for Anomaly Detection and Threat Prevention' in Boosting Software Development Using Machine Learning (2025), examining how machine-learning techniques integrate with software security practices for anomaly detection and threat prevention.",
+    href: "https://scholar.google.com/citations?user=eToK3kMAAAAJ&hl=en"
   },
   {
     id: "publication-secure-data-centres",
     section: "Publications",
     title: "Secure Information and Data Centres",
     snippet: "Pranav co-authored the book chapter 'Secure Information and Data Centres: An Exploratory Study' in Predictive Data Security Using AI (Springer, 2022), exploring strategies for securing sensitive information and data centre infrastructure against cyber-attack vectors.",
+    href: "https://scholar.google.com/citations?user=eToK3kMAAAAJ&hl=en"
   },
   {
     id: "publication-demystifying-intrusion",
     section: "Publications",
     title: "Demystifying Intrusion Detection Model Interpretability",
     snippet: "Pranav co-authored 'Demystifying Intrusion Detection: A Path to Enhanced Model Understanding', published in the Utkal University Journal of Computing & Communication (2024), investigating interpretability techniques to improve trust in intrusion detection model decisions.",
+    href: "https://scholar.google.com/citations?user=eToK3kMAAAAJ&hl=en"
   },
   {
     id: "publication-well-logs-catboost",
     section: "Publications",
     title: "Categorical Boosting for Well-Log Classification",
     snippet: "Pranav co-authored 'Multi-class Imbalanced Classification on Well Logs Using Categorical Boosting Approach', published at the 14th Biennial International Conference and Exposition (SPG, 2024), applying categorical boosting to improve lithofacies prediction accuracy on skewed subsurface well-log datasets.",
+    href: "https://scholar.google.com/citations?user=eToK3kMAAAAJ&hl=en"
   },
   {
     id: "publication-sdn-image-datasets",
     section: "Publications",
     title: "Image Datasets for AI/ML in Software-Defined Networking",
-    snippet: "Pranav co-authored 'From Pixels to Insights: Image Datasets for AI/ML in Software-Defined Networking', published at the OITS International Conference on Information Technology (OCIT, 2023), surveying image dataset construction for AI/ML-driven intrusion detection in software-defined networking.",
+    snippet: "Pranav co-authored 'From Pixels to Insights: Image Datasets for AI/ML in Software-Defined Networking', published at the OITS International Conference on Information Technology (OCIT, 2023), surveying image dataset construction for AI/ML-driven intrusion detection in software-defined networking. This paper received a Best Paper Award — one of Pranav's 2 Best Paper awards across his 8 publications, alongside the Lithofacies Classification paper.",
     href: "https://ieeexplore.ieee.org/abstract/document/10430538"
   },
   {
@@ -142,18 +150,21 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     section: "Projects",
     title: "StyleGAN Anime Face Generation",
     snippet: "Pranav implemented a StyleGAN training pipeline from scratch in PyTorch, tuned for stable generation under constrained compute. Trained on 36K images with progressive growing, custom mapping networks, and style modulation, it delivered diverse anime faces using 2x T4 GPUs.",
+    href: "/#projects"
   },
   {
     id: "skills-ai-systems",
     section: "Skills",
     title: "AI & ML System Skills",
     snippet: "Pranav's AI and ML Systems skillset includes RAG, Graph-RAG, LLM Agents, Multi-Agent Systems, HITL Escalation, LLM-as-a-judge, Prompt Engineering, NLP, Transformers, NER, PyTorch, TensorFlow, Hybrid Retrieval, FAISS, Pinecone, Neo4j, BM25, Cross-Encoder Reranking, LangChain, LangGraph, LLM evaluation, Codex (OpenAI), Antigravity (Google), and Claude Code (Anthropic).",
+    href: "/#skills"
   },
   {
     id: "skills-engineering-cloud",
     section: "Skills",
     title: "Software Engineering & Cloud Skills",
     snippet: "Pranav's software engineering and deployment stack includes Python, SQL, FastAPI, Pydantic, Docker, Linux, Git, GCP, BigQuery, Vertex AI, OpenAI API, LangSmith, Azure Blob, Azure PostgreSQL, Hugging Face, Vercel, and Render.",
+    href: "/#skills"
   },
   {
     id: "profile-rag-reliability",

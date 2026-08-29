@@ -200,6 +200,8 @@ export const publications = [
     authors: "Pranav Pant, R. Mallick, S. K. Sahu, L. K. Vashishtha",
     venue: "OITS International Conference on Information Technology (OCIT)",
     year: "2023",
+    featured: true,
+    note: "Best Paper Award",
     abstract: "Surveyed image dataset construction and applications for AI/ML-driven intrusion detection in software-defined networking environments.",
     doi: "https://ieeexplore.ieee.org/abstract/document/10430538",
     tags: ["Software-Defined Networking", "Datasets"],
