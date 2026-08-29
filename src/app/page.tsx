@@ -10,7 +10,7 @@ import { SkillGrid } from "@/components/SkillGrid";
 import { WritingList } from "@/components/WritingList";
 import { Publications } from "@/components/Publications";
 import { AskPranav } from "@/components/AskPranav";
-import { experience, projects } from "@/data/profile";
+import { education, experience, projects } from "@/data/profile";
 
 export default function Home() {
   return (
@@ -60,10 +60,23 @@ export default function Home() {
               </Section>
 
               <Section
+                id="education"
+                eyebrow="Education"
+                title="Academic background"
+                intro="Graduate and undergraduate work spanning data science, machine learning, and computer science."
+              >
+                <Stagger>
+                  {education.map((item) => (
+                    <ExperienceItem key={item.company} item={item} />
+                  ))}
+                </Stagger>
+              </Section>
+
+              <Section
                 id="publications"
                 eyebrow="Publications"
                 title="Research & Academic Contributions"
-                intro="Peer-reviewed paper outlining distributed machine learning pipelines and Lithofacies optimization systems."
+                intro="Eight peer-reviewed papers spanning intrusion detection, facies classification, and applied machine learning, including a Best Paper award."
               >
                 <Publications />
               </Section>

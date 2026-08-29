@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Pranav Pant | AI & ML Engineer",
   description:
     "AI & ML Engineer building reliable NLP, retrieval, RAG, and multi-agent systems with production-minded engineering.",
-  metadataBase: new URL("https://pranavpant.vercel.app"),
+  metadataBase: new URL("https://pranav-pant.vercel.app"),
   icons: {
     icon: "/images/headshot.jpeg",
   },

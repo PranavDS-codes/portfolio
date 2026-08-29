@@ -26,10 +26,32 @@ export const profile = {
 
 export const navItems = [
   { label: "Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
   { label: "Publications", href: "#publications" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Writing", href: "#writing" },
+];
+
+export const education = [
+  {
+    company: "Arizona State University",
+    role: "M.S., Data Science",
+    dates: "Aug 2024 - May 2026",
+    location: "Tempe, AZ",
+    summary: "GPA: 4.00/4.00",
+    bullets: [],
+    tags: [],
+  },
+  {
+    company: "Kalinga Institute of Industrial Technology",
+    role: "B.Tech, Computer Science & Engineering",
+    dates: "Aug 2020 - Apr 2024",
+    location: "Odisha, India",
+    summary: "GPA: 9.52/10.00",
+    bullets: [],
+    tags: [],
+  },
 ];
 
 export const metrics = [
@@ -54,16 +76,18 @@ export const experience = [
   {
     company: "Joshi Health Foundation / Brown Heart",
     role: "AI/Data Engineering Intern / Volunteer",
-    dates: "Jun 2026 - Present",
+    dates: "May 2026 - Present",
     location: "Remote",
     featured: true,
     summary:
-      "Building and deploying Brown Heart Assistant from scratch as a full-stack, citation-grounded health education platform serving 5,000+ users with specialized FAQ and MASALA Study agents.",
+      "Building and deploying Brown Heart Assistant from scratch as a full-stack, citation-grounded health education platform serving 5,000+ users through a router-orchestrated multi-agent RAG architecture.",
     bullets: [
       "Developed FAQ and MASALA Study RAG agents with source-grounded prompts, citations, confidence gating, unsupported-answer handling, and medical-safety refusals.",
-      "Implemented hybrid retrieval with BM25, FastEmbed/NVIDIA embeddings, reciprocal rank fusion, reranking, and streamed cited responses.",
-      "Built production artifact hydration with Azure Blob artifacts, Azure PostgreSQL row/chunk hydration, checksum validation, manifest parsing, and environment-based model config.",
-      "Planning Instagram reels, YouTube timestamped video, and Brown Heart movie timestamp agents as future knowledge-source expansions.",
+      "Built a router-orchestrated multi-agent architecture spanning FAQ, MASALA Study, Instagram, YouTube, and movie-timestamp agents with source-aware prompts and fallback logic.",
+      "Implemented hybrid retrieval with BM25, Azure PostgreSQL/pgvector, HNSWlib, NVIDIA embeddings and reranking, reciprocal rank fusion, and streamed cited responses via Azure OpenAI.",
+      "Developed MCP-style HITL tool interfaces that trigger on low-confidence medical queries, enabling doctor-specialty matching, clinician contact, or appointment-booking instead of unsupported medical guidance.",
+      "Deployed FastAPI retrieval services on Azure with Blob Storage, PostgreSQL row/chunk hydration, signed sessions, admin health checks, environment-based model config, and 113 passing tests.",
+      "Implemented LangSmith tracing across agent runs, retrieval scores, citation generation, refusal triggers, and HITL escalations to monitor production RAG behavior.",
     ],
     links: [
       {
@@ -75,7 +99,7 @@ export const experience = [
         href: "https://faq.thebrownheart.com/",
       },
     ],
-    tags: ["FastAPI", "RAG", "BM25", "Azure Blob", "Azure PostgreSQL", "Python"],
+    tags: ["FastAPI", "RAG", "pgvector", "HITL", "LangSmith", "Azure PostgreSQL", "Python"],
   },
   {
     company: "Rocket Lawyer",
@@ -83,13 +107,14 @@ export const experience = [
     dates: "Jun 2025 - Aug 2025",
     location: "San Francisco, CA · Remote",
     summary:
-      "Built a modular NLP data-quality pipeline for legal Q&A content, combining anonymization, semantic deduplication, and LLM-based validation to improve downstream training data.",
+      "Built a modular NLP data-quality pipeline for Rocket Lawyer's 'Ask a Lawyer' dataset, combining anonymization, semantic deduplication, and LLM-based validation to feed Rocket Copilot.",
     bullets: [
+      "Processed 3,000+ Q&A pairs through PII anonymization, LLM-as-a-judge validation, and deduplication, enabling reliable input for Rocket Copilot.",
       "Fine-tuned BERT-based NER for PII anonymization across 600K+ tagged samples.",
       "Reduced redundancy by 59.5% with embedding-based duplicate consolidation.",
-      "Improved compliance/content assessment accuracy by 31% with LLM-as-a-judge validation.",
+      "Improved compliance/content assessment accuracy by 31% with a two-layer LLM-as-a-judge validation framework.",
     ],
-    tags: ["Transformers", "NER", "GCP", "FAISS", "LLM Agents", "Python"],
+    tags: ["Transformers", "NER", "GCP", "Vertex AI", "FAISS", "Python"],
   },
   {
     company: "Oil and Natural Gas Corporation (ONGC)",
@@ -99,8 +124,9 @@ export const experience = [
     summary:
       "Worked on applied machine learning systems for intrusion detection, malware detection, and facies classification, with research outcomes published across conference and journal venues.",
     bullets: [
-      "Designed CNN and Spark-based intrusion detection workflows.",
-      "Built semi-supervised facies classification with Bayesian optimization.",
+      "Designed CNN and Spark-based intrusion detection workflows, including a CNN-based malware detector achieving 95%+ accuracy.",
+      "Built semi-supervised facies classification with Bayesian optimization over well-log data.",
+      "Developed scalable feature-engineering workflows for packet-stream and well-log data.",
       "Published related findings with Best Paper recognition.",
     ],
     tags: ["PyTorch", "Apache Spark", "SQL", "Python"],
@@ -117,7 +143,65 @@ export const publications = [
     abstract: "Developed distributed Spark pipelines to identify security threats and optimized facies mapping algorithms using Bayesian optimization over semi-supervised data distributions.",
     doi: "https://doi.org/10.1109/ICML.2023.102345",
     tags: ["Apache Spark", "PyTorch", "SQL"],
-  }
+  },
+  {
+    title: "A Comparative Study of Deep Learning Techniques for Network Intrusion Detection",
+    authors: "Pranav Pant, A. Kumar, L. K. Vashishtha, S. Dash, N. K. Ray, S. K. Sahu",
+    venue: "International Conference on Emerging Systems and Intelligent Computing",
+    year: "2024",
+    abstract: "Compared deep learning architectures for network intrusion detection, evaluating generalization and interpretability across cloud-scale traffic datasets.",
+    doi: "https://ieeexplore.ieee.org/document/10481540",
+    tags: ["Deep Learning", "Intrusion Detection", "Python"],
+  },
+  {
+    title: "Optimising Intrusion Detection Systems: A Hybrid Approach with Ensemble Machine Learning Models",
+    authors: "L. K. Vashishtha, K. Chatterjee, Pranav Pant",
+    venue: "Cluster Computing",
+    year: "2025",
+    abstract: "Proposed a hybrid ensemble machine learning approach to improve generalization and interpretability of intrusion detection systems for modern cloud infrastructure.",
+    tags: ["Ensemble Learning", "Cloud Security"],
+  },
+  {
+    title: "Empowering Software Security: Leveraging Machine Learning for Anomaly Detection and Threat Prevention",
+    authors: "L. K. Vashishtha, K. Chattejee, Pranav Pant, S. K. Sahu, D. P. Mohapatra",
+    venue: "Boosting Software Development Using Machine Learning (book chapter)",
+    year: "2025",
+    abstract: "Examined the integration of software security practices with modern machine-learning techniques for anomaly detection and threat prevention across the development lifecycle.",
+    tags: ["Anomaly Detection", "Software Security"],
+  },
+  {
+    title: "Secure Information and Data Centres: An Exploratory Study",
+    authors: "Pranav Pant, K. Anand, D. D. Onthoni",
+    venue: "Predictive Data Security Using AI (Springer book chapter)",
+    year: "2022",
+    abstract: "Explored strategies for securing sensitive information and data centre infrastructure against cyber-attack vectors targeting strategic and proprietary data.",
+    tags: ["Data Security", "Cybersecurity"],
+  },
+  {
+    title: "Demystifying Intrusion Detection: A Path to Enhanced Model Understanding",
+    authors: "S. K. Sahu, Pranav Pant, R. Mallick",
+    venue: "Utkal University Journal of Computing & Communication",
+    year: "2024",
+    abstract: "Investigated interpretability techniques for intrusion detection models to improve trust and diagnostic understanding of model decisions.",
+    tags: ["Model Interpretability", "Intrusion Detection"],
+  },
+  {
+    title: "Multi-class Imbalanced Classification on Well Logs Using Categorical Boosting Approach",
+    authors: "S. K. Sahu, S. K. Singh, Pranav Pant",
+    venue: "14th Biennial International Conference and Exposition (SPG)",
+    year: "2024",
+    abstract: "Applied categorical boosting to multi-class imbalanced well-log classification, improving lithofacies prediction accuracy on skewed subsurface datasets.",
+    tags: ["CatBoost", "Well Logs", "Facies Classification"],
+  },
+  {
+    title: "From Pixels to Insights: Image Datasets for AI/ML in Software-Defined Networking",
+    authors: "Pranav Pant, R. Mallick, S. K. Sahu, L. K. Vashishtha",
+    venue: "OITS International Conference on Information Technology (OCIT)",
+    year: "2023",
+    abstract: "Surveyed image dataset construction and applications for AI/ML-driven intrusion detection in software-defined networking environments.",
+    doi: "https://ieeexplore.ieee.org/abstract/document/10430538",
+    tags: ["Software-Defined Networking", "Datasets"],
+  },
 ];
 
 export const projects = [
@@ -125,14 +209,14 @@ export const projects = [
     title: "Agentic Graph-RAG: The Brain",
     meta: "Graph-RAG · LangGraph · Retrieval",
     summary:
-      "A self-correcting retrieval system that audits evidence sufficiency, expands to web and Wikipedia when needed, verifies supporting snippets, and refines failed searches before answering.",
+      "A self-correcting LangGraph agent that audits evidence sufficiency, expands to web and Wikipedia when needed, verifies supporting snippets, and refines failed searches before answering.",
     bullets: [
-      "Improved hit rate from 82% to 92% on a judged benchmark.",
-      "Hybrid retrieval with FAISS, BM25, Neo4j, and reranking.",
-      "Audit, verification, and refinement loops reduce unsupported answers.",
+      "Improved retrieval hit rate from 82% to 92% and LLM-judged faithfulness from 0.708 to 0.847 on 100 judged SQuAD-style examples.",
+      "Hybrid retrieval across FAISS/Pinecone dense vectors, BM25, and a 311K-node / 374K-edge Neo4j graph over 39K chunks, unified with NVIDIA and Cross-Encoder reranking.",
+      "HyDE query expansion plus Tavily/Wikipedia fallback and bounded query-refinement loops to reduce unsupported or stale answers.",
     ],
     links: [{ label: "Repository", href: "https://github.com/PranavDS-codes/RAG" }],
-    tags: ["LLM Agents", "FAISS", "BM25", "RAG", "Multi-Agent Systems"],
+    tags: ["LangGraph", "Neo4j", "FAISS", "Pinecone", "BM25", "RAG"],
   },
   {
     title: "Legal Sentinel",
@@ -141,6 +225,7 @@ export const projects = [
       "A deployed contract analysis app that turns legal PDFs into structured sections, clause graphs, risk-ranked review outputs, executive summaries, and grounded follow-up chat.",
     bullets: [
       "Dual-parser PDF extraction with heuristic quality routing.",
+      "Identified 26 risk flags across 31 sections with 33 clause links in a sample 19-page agreement via a graph-aware LLM risk analysis workflow.",
       "Interactive clause graph and guided review workspace.",
       "Run-local retrieval prevents cross-document chat leakage.",
     ],
@@ -148,7 +233,7 @@ export const projects = [
       { label: "Live App", href: "https://bored26-legal-sentinel.hf.space/" },
       { label: "GitHub", href: "https://github.com/PranavDS-codes/DSE_CAPSTONE" },
     ],
-    tags: ["FastAPI", "Pydantic", "RAG", "Python", "GCP"],
+    tags: ["FastAPI", "Pydantic", "RAG", "NVIDIA", "Python"],
   },
   {
     title: "LLM Council",
@@ -184,19 +269,19 @@ export const projects = [
 export const skillGroups = [
   {
     title: "AI Systems",
-    skills: ["RAG", "LLM Agents", "Multi-Agent Systems", "Prompt Engineering", "Transformers", "NER", "Codex", "Antigravity", "Claude Code"],
+    skills: ["RAG", "Graph-RAG", "LLM Agents", "Multi-Agent Systems", "HITL Escalation", "LLM-as-a-judge", "Prompt Engineering", "NLP", "Transformers", "NER", "Codex", "Antigravity", "Claude Code"],
   },
   {
     title: "Engineering",
-    skills: ["Python", "SQL", "FastAPI", "Pydantic", "Docker", "Linux", "Git"],
+    skills: ["Python", "SQL", "FastAPI", "Pydantic", "LangChain", "LangGraph", "Docker", "Linux", "Git"],
   },
   {
     title: "ML & Data",
-    skills: ["PyTorch", "TensorFlow", "FAISS", "BM25", "Apache Spark", "BigQuery", "Vertex AI"],
+    skills: ["PyTorch", "TensorFlow", "Hybrid Retrieval", "FAISS", "Pinecone", "Neo4j", "BM25", "Cross-Encoder Reranking", "Apache Spark", "BigQuery", "Vertex AI"],
   },
   {
     title: "Cloud & Deployment",
-    skills: ["GCP", "Azure Blob", "Azure PostgreSQL", "Hugging Face", "Vercel", "Render"],
+    skills: ["GCP", "OpenAI API", "LangSmith", "Azure Blob", "Azure PostgreSQL", "Hugging Face", "Vercel", "Render"],
   },
 ];
 
