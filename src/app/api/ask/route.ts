@@ -65,7 +65,7 @@ export async function POST(req: Request) {
       });
     }
 
-    const embedModel = process.env.NVIDIA_EMBED_MODEL || "nvidia/llama-nemotron-embed-1b-v2";
+    const embedModel = process.env.NVIDIA_EMBED_MODEL || "nvidia/nemotron-3-embed-1b";
     const chatModel = process.env.NVIDIA_CHAT_MODEL || "openai/gpt-oss-120b";
     const baseUrl = process.env.NVIDIA_BASE_URL || "https://integrate.api.nvidia.com/v1";
 

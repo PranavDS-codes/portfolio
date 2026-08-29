@@ -33,7 +33,7 @@ async function buildIndex() {
     process.exit(1);
   }
 
-  const model = process.env.NVIDIA_EMBED_MODEL || "nvidia/llama-nemotron-embed-1b-v2";
+  const model = process.env.NVIDIA_EMBED_MODEL || "nvidia/nemotron-3-embed-1b";
   const baseUrl = process.env.NVIDIA_BASE_URL || "https://integrate.api.nvidia.com/v1";
 
   console.log(`🚀 Starting index build using model: ${model}...`);
