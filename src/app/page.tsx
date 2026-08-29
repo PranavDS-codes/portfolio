@@ -7,7 +7,7 @@ import { ProjectItem } from "@/components/ProjectItem";
 import { Reveal, Stagger } from "@/components/Motion";
 import { Section } from "@/components/Section";
 import { SkillGrid } from "@/components/SkillGrid";
-import { WritingList } from "@/components/WritingList";
+import { CaseStudyList } from "@/components/CaseStudyList";
 import { Publications } from "@/components/Publications";
 import { AskPranav } from "@/components/AskPranav";
 import { education, experience, projects } from "@/data/profile";
@@ -76,7 +76,7 @@ export default function Home() {
                 id="publications"
                 eyebrow="Publications"
                 title="Research & Academic Contributions"
-                intro="Eight peer-reviewed papers spanning intrusion detection, facies classification, and applied machine learning, including a Best Paper award."
+                intro="Best Paper-winning research on distributed ML pipelines and Lithofacies classification, plus 7 earlier papers in applied ML and security available on Google Scholar."
               >
                 <Publications />
               </Section>
@@ -104,12 +104,12 @@ export default function Home() {
               </Section>
 
               <Section
-                id="writing"
-                eyebrow="Writing"
-                title="Notes on systems that need to hold up outside demos"
-                intro="Short technical reflections on retrieval, data quality, legal AI, and the engineering around LLM systems."
+                id="case-studies"
+                eyebrow="Case Studies"
+                title="How these systems actually work"
+                intro="Deep-dives into the architecture, design tradeoffs, and results behind three of the projects above."
               >
-                <WritingList />
+                <CaseStudyList />
               </Section>
             </div>
           </div>

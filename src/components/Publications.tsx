@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { publications } from "@/data/profile";
+import { publications, profile } from "@/data/profile";
 import { Stagger, StaggerItem } from "./Motion";
 import { useHoverSync } from "./HoverSyncProvider";
 import { externalLinkProps } from "@/lib/utils";
@@ -10,9 +10,12 @@ export function Publications() {
   const { hoveredSkill } = useHoverSync();
   const [expandedAbstract, setExpandedAbstract] = useState<number | null>(null);
 
+  const featured = publications.filter((pub) => pub.featured);
+  const remaining = publications.length - featured.length;
+
   return (
     <Stagger className="grid gap-6">
-      {publications.map((pub, idx) => {
+      {featured.map((pub, idx) => {
         const hasMatchingSkill = hoveredSkill
           ? pub.tags.some((tag) => tag.toLowerCase() === hoveredSkill.toLowerCase())
           : false;
@@ -97,6 +100,19 @@ export function Publications() {
           </StaggerItem>
         );
       })}
+
+      {remaining > 0 && (
+        <StaggerItem>
+          <a
+            href={profile.scholarUrl}
+            className="flex items-center gap-2 text-xs font-bold text-slate-400 transition hover:text-teal"
+            {...externalLinkProps(profile.scholarUrl)}
+          >
+            +{remaining} more publications in applied ML &amp; security — view on Google Scholar
+            <span aria-hidden="true">-&gt;</span>
+          </a>
+        </StaggerItem>
+      )}
     </Stagger>
   );
 }
