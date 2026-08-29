@@ -67,8 +67,12 @@ export const experience = [
     ],
     links: [
       {
-        label: "Try Brown Heart Assistant",
-        href: "https://brown-heart-assistant.onrender.com/",
+        label: "BHAI",
+        href: "https://bhai.thebrownheart.com/",
+      },
+      {
+        label: "FAQ Website",
+        href: "https://faq.thebrownheart.com/",
       },
     ],
     tags: ["FastAPI", "RAG", "BM25", "Azure Blob", "Azure PostgreSQL", "Python"],

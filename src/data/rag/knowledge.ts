@@ -38,14 +38,14 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     section: "Experience",
     title: "Brown Heart Assistant at Joshi Health Foundation",
     snippet: "Pranav worked as an AI/Data Engineering Intern and Volunteer at Joshi Health Foundation / Brown Heart. He built and deployed the Brown Heart Assistant from scratch as a full-stack, citation-grounded health education platform serving 5,000+ users. He developed FAQ and MASALA Study RAG agents using source-grounded prompts, citations, confidence gating, and medical-safety refusals.",
-    href: "https://brown-heart-assistant.onrender.com/"
+    href: "https://bhai.thebrownheart.com/"
   },
   {
     id: "experience-jhf-tech",
     section: "Experience",
     title: "Brown Heart Technical Stack",
     snippet: "For the Brown Heart Assistant, Pranav implemented a hybrid retrieval pipeline using BM25, FastEmbed/NVIDIA embeddings, reciprocal rank fusion (RRF), reranking, and streamed cited responses. The production backend includes artifact hydration with Azure Blob artifacts, Azure PostgreSQL row/chunk hydration, checksum validation, and environment-based model configs.",
-    href: "https://brown-heart-assistant.onrender.com/"
+    href: "https://bhai.thebrownheart.com/"
   },
   {
     id: "experience-rocket-lawyer",
