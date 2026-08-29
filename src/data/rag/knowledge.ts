@@ -142,7 +142,7 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     id: "project-legal-sentinel",
     section: "Projects",
     title: "Legal Sentinel",
-    snippet: "Legal Sentinel is a deployed contract analysis app built by Pranav using FastAPI and NVIDIA-hosted LLMs. It parses legal PDFs using a dual-parser with heuristic quality routing and transforms them into structured sections, clause graphs, risk-ranked reviews, and executive summaries. On a sample 19-page agreement it identified 26 risk flags across 31 sections with 33 clause links via a graph-aware LLM risk analysis workflow. It features a run-local retrieval setup that prevents cross-document chat leaks and supports streamed grounded Q&A.",
+    snippet: "Legal Sentinel is a deployed contract analysis app built by Pranav (backend, pipeline, and deployment) with a co-contributor, Vishnu Jayanth Senthil Kumar, who led frontend and UX; it started as an FSE 570 capstone project. It parses legal PDFs using a dual-parser with heuristic quality routing and transforms them into structured sections, clause graphs, risk-ranked reviews, and executive summaries. Clause graph edges carry contextual relation labels (e.g. 'overrides referenced clause', 'conditioned by') instead of a generic 'references' label, backed by a rule-based fallback. Every LLM stage runs on a single locked model, openai/gpt-oss-20b, served through NVIDIA's OpenAI-compatible endpoint. On a sample contract it identified 48 risk flags across 53 sections with 30 clause links via a graph-aware LLM risk analysis workflow, with a typical end-to-end runtime under 60 seconds. It features a run-local retrieval setup that prevents cross-document chat leaks and supports streamed grounded Q&A.",
     href: "https://bored26-legal-sentinel.hf.space/"
   },
   {
@@ -198,7 +198,7 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     id: "case-study-legal-sentinel",
     section: "Case Studies",
     title: "Case Study: Legal Sentinel",
-    snippet: "Pranav wrote a full case study on Legal Sentinel, covering the dual-parser PDF extraction pipeline, the graph-aware LLM risk analysis workflow, the schema-validated risk flags (26 flags across 31 sections on a sample 19-page agreement), and the run-local retrieval design that prevents documents from leaking across user sessions.",
+    snippet: "Pranav wrote a full case study on Legal Sentinel, covering the dual-parser PDF extraction pipeline, the graph-aware LLM risk analysis workflow, the schema-validated risk flags (48 flags across 53 sections on a sample contract, under 60s runtime), and the run-local retrieval design that prevents documents from leaking across user sessions.",
     href: "/case-studies/legal-sentinel"
   }
 ];
