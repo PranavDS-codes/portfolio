@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function BrownHeartCaseStudy() {
   return (
-    <main className="mx-auto max-w-3xl px-5 py-12 sm:px-8 sm:py-16">
+    <main className="mx-auto max-w-4xl px-6 py-12 sm:px-10 sm:py-16">
       <CaseStudyHeader
         meta="Medical RAG · HITL · Multi-Agent"
         title="Brown Heart Assistant"
@@ -35,8 +35,8 @@ export default function BrownHeartCaseStudy() {
           one generic prompt trying to cover everything.
         </p>
         <p>
-          Retrieval is hybrid — BM25 for lexical matching plus vector search over Azure PostgreSQL with pgvector
-          and an HNSWlib index, unified with reciprocal rank fusion and NVIDIA reranking. Chat generation runs on
+          Retrieval is hybrid — BM25 for lexical matching plus vector search over Azure PostgreSQL using a
+          pgvector HNSW index, unified with reciprocal rank fusion and NVIDIA reranking. Chat generation runs on
           Azure OpenAI; NVIDIA handles embeddings and reranking only — splitting those responsibilities let each
           piece use the model best suited to it rather than routing everything through one provider.
         </p>
@@ -58,14 +58,39 @@ export default function BrownHeartCaseStudy() {
         </p>
       </CaseStudySection>
 
+      <CaseStudySection title="The same discipline upstream">
+        <p>
+          Refuse-and-route only works if the content it&apos;s grounded in is trustworthy to begin with — so the
+          same &quot;don&apos;t ship confidence you can&apos;t back up&quot; rule applies to how the FAQ
+          knowledge base itself gets built, not just to what the assistant says at query time. The data pipeline
+          tracks exactly one file in git: the curated FAQ corpus, 244 Q&amp;A rows. Every pipeline run rewrites it
+          in place, which means every run produces a reviewable diff — and that diff is the actual publish gate.
+          Nothing reaches the production database until a human has looked at exactly what changed and how it
+          was enriched. It&apos;s the HITL principle applied one step earlier: don&apos;t let unreviewed
+          confidence into the system in the first place.
+        </p>
+      </CaseStudySection>
+
       <CaseStudySection title="Production hardening">
         <p>
           Confidence thresholds and refusal behavior only matter if you can verify they&apos;re actually firing
           correctly in production. LangSmith tracing runs across every agent call — retrieval scores, citation
           generation, refusal triggers, and HITL escalations are all logged, so a review of &quot;why did it
           refuse this one&quot; is a trace lookup, not a guess. The backend runs on FastAPI with Azure Blob
-          artifact hydration, checksum validation, signed sessions, admin health checks, and 113 passing tests
+          artifact hydration, checksum validation, signed sessions, admin health checks, and 420+ passing tests
           covering retrieval, auth, citations, and medical-safety behavior specifically.
+        </p>
+        <p>
+          Non-browser integrations — a WhatsApp bot, a partner service — can&apos;t satisfy the browser-only
+          session flow, so a separate <code className="text-xs">/service/chat</code> API exposes the same
+          request/response contract behind per-caller API keys, per-caller rate limiting, and its own LangSmith
+          tagging, keeping that traffic attributable and rate-bounded without touching the primary auth path.
+        </p>
+        <p>
+          The FAQ knowledge base is also presented as its own thing: a companion FAQ dashboard is rebuilt daily
+          from the same production database through a dedicated read-only role, and citations in the assistant
+          deep-link straight to the matching entry there — presentation logic kept out of the assistant&apos;s
+          own runtime rather than bolted onto it.
         </p>
       </CaseStudySection>
 
@@ -73,7 +98,7 @@ export default function BrownHeartCaseStudy() {
         <CaseStudyStats
           stats={[
             { value: "5,000+", label: "Users served in production" },
-            { value: "113", label: "Passing tests across retrieval, auth, citations, and safety behavior" },
+            { value: "420+", label: "Passing tests across retrieval, auth, citations, and safety behavior" },
             { value: "5", label: "Specialized agents behind one router (FAQ, MASALA, Instagram, YouTube, movie)" },
           ]}
         />

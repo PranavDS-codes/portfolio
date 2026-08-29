@@ -8,13 +8,18 @@ export const metadata: Metadata = {
 
 export default function LegalSentinelCaseStudy() {
   return (
-    <main className="mx-auto max-w-3xl px-5 py-12 sm:px-8 sm:py-16">
+    <main className="mx-auto max-w-4xl px-6 py-12 sm:px-10 sm:py-16">
       <CaseStudyHeader
         meta="Legal AI · Clause Graphs · Document Intelligence"
         title="Legal Sentinel"
         summary="Contract review is slow because it's structural work disguised as reading: cross-references, obligations, and risk live in the relationships between clauses, not just the text of any one of them. Legal Sentinel makes those relationships explicit instead of asking a human to hold them in their head."
         tags={["FastAPI", "Pydantic", "RAG", "NVIDIA", "Python"]}
       />
+
+      <p className="mt-4 text-xs text-slate-500">
+        Built with a co-contributor, Vishnu Jayanth Senthil Kumar, who led frontend and UX. This case study covers
+        the backend, pipeline, and deployment work, which was mine.
+      </p>
 
       <CaseStudySection title="The problem">
         <p>
@@ -34,10 +39,20 @@ export default function LegalSentinelCaseStudy() {
         </p>
         <p>
           Clause graph construction combines regex-based reference mining with LLM verification: cheap pattern
-          matching finds candidate references, and the model confirms and labels them, enforcing known-section
-          IDs, grounded evidence quotes, and relation labels rather than letting the model hallucinate a
-          reference structure that isn&apos;t actually in the document. Follow-up chat runs on a lightweight RAG
-          layer with NVIDIA embeddings and cosine-search indexing over the extracted sections and risk findings.
+          matching finds candidate references, and the model confirms them, enforcing known-section IDs and
+          grounded evidence quotes rather than letting it hallucinate a reference structure that isn&apos;t
+          actually in the document. Each edge also gets a contextual relation label — &quot;overrides referenced
+          clause,&quot; &quot;conditioned by,&quot; &quot;governed by,&quot; &quot;incorporates definition
+          from&quot; — instead of a generic &quot;references,&quot; with a rule-based fallback covering cases
+          where the LLM label doesn&apos;t come back. Follow-up chat runs on a lightweight RAG layer with NVIDIA
+          embeddings and cosine-search indexing over the extracted sections and risk findings.
+        </p>
+        <p>
+          Every LLM stage — extraction repair, clause verification, risk analysis, and the executive report —
+          runs on a single locked model, <code className="text-xs">openai/gpt-oss-20b</code> served through
+          NVIDIA&apos;s OpenAI-compatible endpoint, rather than letting each stage pick its own. That&apos;s a
+          deliberate cost/control tradeoff: one model to tune prompts against, one place to change if the
+          provider or model needs to move.
         </p>
       </CaseStudySection>
 
@@ -62,12 +77,13 @@ export default function LegalSentinelCaseStudy() {
       </CaseStudySection>
 
       <CaseStudySection title="Results">
-        <p>On a sample 19-page agreement, the pipeline identified:</p>
+        <p>On a sample contract, the pipeline identified:</p>
         <CaseStudyStats
           stats={[
-            { value: "26", label: "Risk flags identified" },
-            { value: "31", label: "Sections structurally extracted" },
-            { value: "33", label: "Clause links in the reference graph" },
+            { value: "18", label: "Risk flags identified" },
+            { value: "111", label: "Sections structurally extracted" },
+            { value: "69", label: "Clause links in the reference graph" },
+            { value: "<60s", label: "Typical end-to-end runtime, upload to full review" },
           ]}
         />
       </CaseStudySection>

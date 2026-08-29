@@ -85,9 +85,9 @@ export const experience = [
     bullets: [
       "Developed FAQ and MASALA Study RAG agents with source-grounded prompts, citations, confidence gating, unsupported-answer handling, and medical-safety refusals.",
       "Built a router-orchestrated multi-agent architecture spanning FAQ, MASALA Study, Instagram, YouTube, and movie-timestamp agents with source-aware prompts and fallback logic.",
-      "Implemented hybrid retrieval with BM25, Azure PostgreSQL/pgvector, HNSWlib, NVIDIA embeddings and reranking, reciprocal rank fusion, and streamed cited responses via Azure OpenAI.",
+      "Implemented hybrid retrieval with BM25, a pgvector HNSW index on Azure PostgreSQL, NVIDIA embeddings and reranking, reciprocal rank fusion, and streamed cited responses via Azure OpenAI.",
       "Developed MCP-style HITL tool interfaces that trigger on low-confidence medical queries, enabling doctor-specialty matching, clinician contact, or appointment-booking instead of unsupported medical guidance.",
-      "Deployed FastAPI retrieval services on Azure with Blob Storage, PostgreSQL row/chunk hydration, signed sessions, admin health checks, environment-based model config, and 113 passing tests.",
+      "Deployed FastAPI retrieval services on Azure with Blob Storage, PostgreSQL row/chunk hydration, signed sessions, admin health checks, environment-based model config, and 420+ passing tests.",
       "Implemented LangSmith tracing across agent runs, retrieval scores, citation generation, refusal triggers, and HITL escalations to monitor production RAG behavior.",
     ],
     links: [
@@ -229,7 +229,7 @@ export const projects = [
       "A deployed contract analysis app that turns legal PDFs into structured sections, clause graphs, risk-ranked review outputs, executive summaries, and grounded follow-up chat.",
     bullets: [
       "Dual-parser PDF extraction with heuristic quality routing.",
-      "Identified 26 risk flags across 31 sections with 33 clause links in a sample 19-page agreement via a graph-aware LLM risk analysis workflow.",
+      "Identified 18 risk flags across 111 sections with 69 clause links in a sample contract via a graph-aware LLM risk analysis workflow.",
       "Interactive clause graph and guided review workspace.",
       "Run-local retrieval prevents cross-document chat leakage.",
     ],
@@ -308,7 +308,7 @@ export const caseStudies = [
     slug: "legal-sentinel",
     title: "Legal Sentinel",
     meta: "Legal AI · Clause Graphs · Document Intelligence",
-    summary: "Turning a 19-page contract into a risk-ranked clause graph — 26 flags, 31 sections, 33 links — without ever letting documents leak across sessions.",
+    summary: "Turning a contract into a risk-ranked clause graph — 18 flags, 111 sections, 69 links, under 60s — without ever letting documents leak across sessions.",
     tags: ["FastAPI", "NVIDIA", "RAG"],
   },
 ];
