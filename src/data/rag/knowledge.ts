@@ -44,8 +44,15 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     id: "experience-jhf-tech",
     section: "Experience",
     title: "Brown Heart Technical Stack",
-    snippet: "For the Brown Heart Assistant, Pranav implemented hybrid retrieval using BM25, Azure PostgreSQL/pgvector, HNSWlib, and NVIDIA embeddings/reranking, unified with reciprocal rank fusion (RRF) and streamed via Azure OpenAI for chat generation. He built MCP-style human-in-the-loop (HITL) tool interfaces that trigger on low-confidence medical queries for doctor-specialty matching, clinician contact, or appointment booking. The production backend includes Azure Blob artifact hydration, checksum validation, signed sessions, admin health checks, environment-based model config, LangSmith tracing across agent runs and retrieval scores, and 113 passing tests.",
+    snippet: "For the Brown Heart Assistant, Pranav implemented hybrid retrieval using BM25, a pgvector HNSW index on Azure PostgreSQL, and NVIDIA embeddings/reranking, unified with reciprocal rank fusion (RRF) and streamed via Azure OpenAI for chat generation. He built MCP-style human-in-the-loop (HITL) tool interfaces that trigger on low-confidence medical queries for doctor-specialty matching, clinician contact, or appointment booking. The production backend includes Azure Blob artifact hydration, checksum validation, signed sessions, admin health checks, environment-based model config, LangSmith tracing across agent runs and retrieval scores, and 420+ passing tests.",
     href: "https://bhai.thebrownheart.com/"
+  },
+  {
+    id: "experience-jhf-production-extras",
+    section: "Experience",
+    title: "Brown Heart: Data Review Gate, FAQ Dashboard, Service API",
+    snippet: "Beyond the assistant itself, Pranav's Brown Heart work spans a separate data pipeline repo and a companion FAQ dashboard site. The data pipeline tracks exactly one file in git, the curated FAQ corpus, so every pipeline run produces a reviewable diff that must be checked before anything is published to the production Azure database - a manual review gate applying the same 'don't ship confidence you can't back up' principle to content curation that HITL escalation applies at query time. The FAQ dashboard (faq.thebrownheart.com) is a separate, read-only Astro site rebuilt daily from the same production database through a dedicated read-only Postgres role, and the assistant's FAQ citations deep-link directly to it. For non-browser integrations, a /service/chat API exposes the same chat contract behind per-caller API keys, per-caller rate limiting, and its own LangSmith trace tagging.",
+    href: "https://faq.thebrownheart.com/"
   },
   {
     id: "experience-rocket-lawyer",
@@ -184,7 +191,7 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     id: "case-study-brown-heart",
     section: "Case Studies",
     title: "Case Study: Brown Heart Assistant",
-    snippet: "Pranav wrote a full case study on the Brown Heart Assistant, covering why medical Q&A needs a 'refuse-and-route' design instead of always answering, the router-orchestrated multi-agent architecture, the HITL escalation design for low-confidence medical queries, and the production hardening (LangSmith tracing, 113 tests) behind a system serving 5,000+ users.",
+    snippet: "Pranav wrote a full case study on the Brown Heart Assistant, covering why medical Q&A needs a 'refuse-and-route' design instead of always answering, the router-orchestrated multi-agent architecture, the HITL escalation design for low-confidence medical queries, the reviewed data-publish gate that applies the same discipline upstream to content curation, and the production hardening (LangSmith tracing, a /service/chat API, the companion FAQ dashboard, 420+ tests) behind a system serving 5,000+ users.",
     href: "/case-studies/brown-heart"
   },
   {

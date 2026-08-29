@@ -85,9 +85,9 @@ export const experience = [
     bullets: [
       "Developed FAQ and MASALA Study RAG agents with source-grounded prompts, citations, confidence gating, unsupported-answer handling, and medical-safety refusals.",
       "Built a router-orchestrated multi-agent architecture spanning FAQ, MASALA Study, Instagram, YouTube, and movie-timestamp agents with source-aware prompts and fallback logic.",
-      "Implemented hybrid retrieval with BM25, Azure PostgreSQL/pgvector, HNSWlib, NVIDIA embeddings and reranking, reciprocal rank fusion, and streamed cited responses via Azure OpenAI.",
+      "Implemented hybrid retrieval with BM25, a pgvector HNSW index on Azure PostgreSQL, NVIDIA embeddings and reranking, reciprocal rank fusion, and streamed cited responses via Azure OpenAI.",
       "Developed MCP-style HITL tool interfaces that trigger on low-confidence medical queries, enabling doctor-specialty matching, clinician contact, or appointment-booking instead of unsupported medical guidance.",
-      "Deployed FastAPI retrieval services on Azure with Blob Storage, PostgreSQL row/chunk hydration, signed sessions, admin health checks, environment-based model config, and 113 passing tests.",
+      "Deployed FastAPI retrieval services on Azure with Blob Storage, PostgreSQL row/chunk hydration, signed sessions, admin health checks, environment-based model config, and 420+ passing tests.",
       "Implemented LangSmith tracing across agent runs, retrieval scores, citation generation, refusal triggers, and HITL escalations to monitor production RAG behavior.",
     ],
     links: [
