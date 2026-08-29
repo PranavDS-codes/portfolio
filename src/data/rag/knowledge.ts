@@ -153,12 +153,34 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     id: "skills-engineering-cloud",
     section: "Skills",
     title: "Software Engineering & Cloud Skills",
-    snippet: "Pranav's software engineering and deployment stack includes Python, SQL, FastAPI, Pydantic, Docker, Linux, Git, GCP, Vertex AI, OpenAI API, LangSmith, Azure Blob, Azure PostgreSQL, Hugging Face, Vercel, and Render.",
+    snippet: "Pranav's software engineering and deployment stack includes Python, SQL, FastAPI, Pydantic, Docker, Linux, Git, GCP, BigQuery, Vertex AI, OpenAI API, LangSmith, Azure Blob, Azure PostgreSQL, Hugging Face, Vercel, and Render.",
   },
   {
     id: "profile-rag-reliability",
     section: "Projects",
     title: "RAG Reliability & Audits",
-    snippet: "Pranav approaches RAG reliability by building self-correcting architectures. In projects like Agentic Graph-RAG (The Brain) and Brown Heart Assistant, he ensures high reliability using query analysis, hybrid retrieval (BM25 + vector matching), Neo4j knowledge graphs, multi-step evidence sufficiency audits, confidence gating thresholds, and medical-safety refusal filters to prevent hallucinations."
+    snippet: "Pranav approaches RAG reliability by building self-correcting architectures. In projects like Agentic Graph-RAG (The Brain) and Brown Heart Assistant, he ensures high reliability using query analysis, hybrid retrieval (BM25 + vector matching), Neo4j knowledge graphs, multi-step evidence sufficiency audits, confidence gating thresholds, and medical-safety refusal filters to prevent hallucinations.",
+    href: "/case-studies/graph-rag"
+  },
+  {
+    id: "case-study-graph-rag",
+    section: "Case Studies",
+    title: "Case Study: Agentic Graph-RAG (The Brain)",
+    snippet: "Pranav wrote a full case study on Agentic Graph-RAG: The Brain, covering the problem with naive RAG (generating fluent but unsupported answers when retrieval fails), the hybrid FAISS/Pinecone/BM25/Neo4j architecture, the self-correction loop with sufficiency auditing and bounded query refinement, and the results (82%→92% hit rate, 0.708→0.847 faithfulness).",
+    href: "/case-studies/graph-rag"
+  },
+  {
+    id: "case-study-brown-heart",
+    section: "Case Studies",
+    title: "Case Study: Brown Heart Assistant",
+    snippet: "Pranav wrote a full case study on the Brown Heart Assistant, covering why medical Q&A needs a 'refuse-and-route' design instead of always answering, the router-orchestrated multi-agent architecture, the HITL escalation design for low-confidence medical queries, and the production hardening (LangSmith tracing, 113 tests) behind a system serving 5,000+ users.",
+    href: "/case-studies/brown-heart"
+  },
+  {
+    id: "case-study-legal-sentinel",
+    section: "Case Studies",
+    title: "Case Study: Legal Sentinel",
+    snippet: "Pranav wrote a full case study on Legal Sentinel, covering the dual-parser PDF extraction pipeline, the graph-aware LLM risk analysis workflow, the schema-validated risk flags (26 flags across 31 sections on a sample 19-page agreement), and the run-local retrieval design that prevents documents from leaking across user sessions.",
+    href: "/case-studies/legal-sentinel"
   }
 ];
