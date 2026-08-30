@@ -107,7 +107,7 @@ export default function Home() {
                 id="case-studies"
                 eyebrow="Case Studies"
                 title="How these systems actually work"
-                intro="Deep-dives into the architecture, design tradeoffs, and results behind three of the projects above."
+                intro="Deep-dives into the architecture, design tradeoffs, and results behind four of the projects above."
               >
                 <CaseStudyList />
               </Section>
