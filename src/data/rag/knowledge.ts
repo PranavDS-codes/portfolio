@@ -135,7 +135,7 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     id: "project-graph-rag",
     section: "Projects",
     title: "Agentic Graph-RAG: The Brain",
-    snippet: "Pranav built 'Agentic Graph-RAG: The Brain', a self-correcting LangGraph agent that audits evidence sufficiency, expands searches to web/Wikipedia via Tavily when needed, verifies supporting snippets, and refines failed queries with HyDE query expansion before answering. It uses hybrid retrieval across FAISS/Pinecone dense vectors, BM25, and a 311K-node / 374K-edge Neo4j knowledge graph over 39K chunks, unified with NVIDIA and Cross-Encoder reranking. On 100 judged SQuAD-style examples it improved retrieval hit rate from 82% to 92% and LLM-judged faithfulness from 0.708 to 0.847.",
+    snippet: "Pranav built 'Agentic Graph-RAG: The Brain', a self-correcting LangGraph agent that audits evidence sufficiency, expands searches to web/Wikipedia via Tavily when needed, verifies supporting snippets, and refines failed queries with HyDE query expansion before answering. An orchestrator layer sits in front of retrieval and decides per turn, using the current query and chat history, whether to answer directly, retrieve internally, search the web, look up Wikipedia, or ask a clarifying question - conversations persist across turns so this reasoning carries forward. It uses hybrid retrieval across FAISS/Pinecone dense vectors (NVIDIA NIM-embedded with a local fallback embedder), BM25, and a 311K-node / 374K-edge Neo4j knowledge graph over 39K chunks, unified with an NVIDIA NIM reranker and a local cross-encoder. New findings the agent's web/Wikipedia scouts turn up land in a human-reviewed queue before being written into the graph, rather than being auto-ingested. On 100 judged SQuAD-style examples - run before the self-correction loop, Neo4j migration, and NVIDIA dual-engine retrieval existed - it improved retrieval hit rate from 82% to 92% and LLM-judged faithfulness from 0.708 to 0.847; a from-scratch benchmark against the current architecture is in progress.",
     href: "https://github.com/PranavDS-codes/RAG"
   },
   {
@@ -170,7 +170,28 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     id: "project-llm-council",
     section: "Projects",
     title: "LLM Council",
-    snippet: "LLM Council is a multi-agent debate system built with FastAPI, asyncio, and Pydantic. It allows five concurrent AI personas to evaluate a problem space. It enforces strict Pydantic schemas for inter-agent communication and provides tracing for reasoning flow, token usage, and recovery paths to make LLM outputs inspection-friendly.",
+    snippet: "LLM Council is a multi-agent deliberation pipeline built with FastAPI and Pydantic. It runs four stages over one streamed SSE connection: generators draft independently, a critic scores every draft, an architect plans the final answer's structure, and a finalizer writes from that plan - separating drafting, scoring, planning, and writing so a final answer's provenance can be inspected instead of just trusted. The agent roster is fully customizable, up to 12 personas with per-role model selection.",
+    href: "https://llm-council-three.vercel.app/"
+  },
+  {
+    id: "project-llm-council-architecture",
+    section: "Projects",
+    title: "LLM Council: Scoring & Blueprint Stages",
+    snippet: "In LLM Council, reasoning effort is tuned per stage - low for drafting and final prose, medium for critique and planning - trading latency against quality where each stage needs it. Drafts are batched (batch size scales with roster size) and scored 1-10 across five fixed metrics: accuracy, relevance, completeness, clarity, practical usefulness. Finalists are chosen by a deterministic sort - average score, then accuracy, then generator order - rather than another model vote. Before the finalizer writes anything, a separate architect stage produces a schema-validated blueprint (section order, tone guidelines, missed facts, a strategy for integrating the critique) so the final answer is genuinely synthesized rather than just the highest-scoring draft.",
+    href: "https://github.com/PranavDS-codes/LLM-Council"
+  },
+  {
+    id: "project-llm-council-safety",
+    section: "Projects",
+    title: "LLM Council: Grounded Chat & Failure Handling",
+    snippet: "LLM Council's follow-up chat is scoped strictly to the final report text and explicitly instructed not to reference internal generator drafts, scores, or the blueprint, even though that data exists in the same session - a deliberate boundary on what the system will say through that surface. The pipeline is also built to fail gracefully: a single generator or critic batch can fail without killing the run, transient NVIDIA API errors retry with exponential backoff and jitter, requests that fail on unsupported parameters automatically drop response_format then reasoning_effort then usage reporting and retry, and SSE heartbeats keep the connection alive through proxy idle timeouts during long reasoning pauses.",
+    href: "/case-studies/llm-council"
+  },
+  {
+    id: "project-llm-council-results",
+    section: "Projects",
+    title: "LLM Council: Measured Results",
+    snippet: "Pranav benchmarked LLM Council against a single raw model call across 10 fixed prompts, graded blind by an independent judge on the council's own five-metric rubric. The council won more often than it lost: a +0.09 average score edge (10-point scale), 6 council wins to 1 tie to 3 baseline wins, with the largest gains in practical usefulness (+0.20) and completeness (+0.15) and a very slight clarity dip (-0.05). That edge cost roughly 8.2x the tokens of a single call and about 2.4x the latency (median 71s vs 31s) - a small, real, consistent edge bought at a real, measurable cost, not a blowout.",
     href: "https://llm-council-three.vercel.app/"
   },
   {
@@ -198,14 +219,14 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     id: "profile-rag-reliability",
     section: "Projects",
     title: "RAG Reliability & Audits",
-    snippet: "Pranav approaches RAG reliability by building self-correcting architectures. In projects like Agentic Graph-RAG (The Brain) and Brown Heart Assistant, he ensures high reliability using query analysis, hybrid retrieval (BM25 + vector matching), Neo4j knowledge graphs, multi-step evidence sufficiency audits, confidence gating thresholds, and medical-safety refusal filters to prevent hallucinations.",
+    snippet: "Pranav approaches RAG reliability by building self-correcting architectures. In projects like Agentic Graph-RAG (The Brain) and Brown Heart Assistant, he ensures high reliability using query analysis, hybrid retrieval (BM25 + vector matching), Neo4j knowledge graphs, multi-step evidence sufficiency audits, confidence gating thresholds, and medical-safety refusal filters to prevent hallucinations. He also treats what a system learns automatically as something to gate: in Graph-RAG, new facts the agent's web scouts find go into a human-reviewed queue rather than being auto-ingested into the knowledge graph.",
     href: "/case-studies/graph-rag"
   },
   {
     id: "case-study-graph-rag",
     section: "Case Studies",
     title: "Case Study: Agentic Graph-RAG (The Brain)",
-    snippet: "Pranav wrote a full case study on Agentic Graph-RAG: The Brain, covering the problem with naive RAG (generating fluent but unsupported answers when retrieval fails), the hybrid FAISS/Pinecone/BM25/Neo4j architecture, the self-correction loop with sufficiency auditing and bounded query refinement, and the results (82%→92% hit rate, 0.708→0.847 faithfulness).",
+    snippet: "Pranav wrote a full case study on Agentic Graph-RAG: The Brain, covering the problem with naive RAG (generating fluent but unsupported answers when retrieval fails), the hybrid FAISS/Pinecone/BM25/Neo4j architecture with its query-routing orchestrator, the self-correction loop with sufficiency auditing and a human-reviewed queue for new graph facts, and the results (82%→92% hit rate, 0.708→0.847 faithfulness on the benchmark that motivated the hybrid design - a fresh benchmark of the current architecture is in progress).",
     href: "/case-studies/graph-rag"
   },
   {
@@ -221,5 +242,12 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     title: "Case Study: Legal Sentinel",
     snippet: "Pranav wrote a full case study on Legal Sentinel, covering the dual-parser PDF extraction pipeline, the graph-aware LLM risk analysis workflow, the schema-validated risk flags (18 flags across 111 sections on a sample contract, under 60s runtime), and the run-local retrieval design that prevents documents from leaking across user sessions.",
     href: "/case-studies/legal-sentinel"
+  },
+  {
+    id: "case-study-llm-council",
+    section: "Case Studies",
+    title: "Case Study: LLM Council",
+    snippet: "Pranav wrote a full case study on LLM Council, covering why judging drafts with another free-form model call is a weak design, the four-stage draft/score/plan/write pipeline, the deterministic rubric-based scoring that replaces a model vote, the schema-validated blueprint stage, the report-scoped follow-up chat boundary, the graceful-failure handling, and the measured results (+0.09 avg. score edge, 6-1-3 win/tie/loss, 8.2x token cost) against a single-model baseline.",
+    href: "/case-studies/llm-council"
   }
 ];

@@ -243,17 +243,17 @@ export const projects = [
     title: "LLM Council",
     meta: "Agents · FastAPI · Orchestration",
     summary:
-      "A multi-agent debate system with structured schemas, concurrency, and tracing to make model outputs easier to inspect and trust.",
+      "A multi-agent deliberation pipeline that separates drafting, scoring, planning, and writing into distinct stages, so a final answer's provenance can be inspected instead of just trusted.",
     bullets: [
-      "Five concurrent AI personas evaluate the same problem space.",
-      "Strict Pydantic contracts for inter-agent communication.",
-      "Tracing for reasoning flow, token usage, and recovery paths.",
+      "Independent persona drafts are scored on a fixed five-metric rubric, then a deterministic rule — not another model vote — picks the finalists.",
+      "A dedicated architect stage plans structure and tone from the critique before any final prose gets written.",
+      "Fully customizable agent roster (up to 12 personas, per-role models), report-grounded follow-up chat, and LangSmith tracing end to end.",
     ],
     links: [
       { label: "Live App", href: "https://llm-council-three.vercel.app/" },
       { label: "GitHub", href: "https://github.com/PranavDS-codes/LLM-Council" },
     ],
-    tags: ["FastAPI", "Pydantic", "Multi-Agent Systems", "Python", "LLM Agents"],
+    tags: ["FastAPI", "Pydantic", "NVIDIA NIM", "LangSmith", "Multi-Agent Systems"],
   },
   {
     title: "StyleGAN for Anime Face Generation",
@@ -310,5 +310,12 @@ export const caseStudies = [
     meta: "Legal AI · Clause Graphs · Document Intelligence",
     summary: "Turning a contract into a risk-ranked clause graph — 18 flags, 111 sections, 69 links, under 60s — without ever letting documents leak across sessions.",
     tags: ["FastAPI", "NVIDIA", "RAG"],
+  },
+  {
+    slug: "llm-council",
+    title: "LLM Council",
+    meta: "Agents · LLM Orchestration · Deliberation",
+    summary: "Five personas draft, one rubric scores them, and a rules-based selector — not a model vote — decides what makes the final answer.",
+    tags: ["FastAPI", "NVIDIA NIM", "Multi-Agent Systems", "LangSmith"],
   },
 ];
