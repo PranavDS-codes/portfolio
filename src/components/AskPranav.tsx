@@ -12,31 +12,40 @@ interface Citation {
   href?: string;
 }
 
-interface AskResponse {
-  answer: string;
-  citations: Citation[];
-  diagnostics?: {
-    matchedChunks: number;
-  };
-  error?: string;
+type StreamEvent =
+  | { type: "meta"; model: string; cacheHit?: boolean }
+  | { type: "token"; text: string }
+  | { type: "done"; answer: string; citations: Citation[]; diagnostics?: { matchedChunks: number } }
+  | { type: "error"; message: string; status?: number };
+
+function friendlyModelName(model: string): string {
+  return model.split("/").pop() || model;
 }
 
 export function AskPranav() {
   const [question, setQuestion] = useState("");
   const [loading, setLoading] = useState(false);
+  const [streaming, setStreaming] = useState(false);
   const [slow, setSlow] = useState(false);
   const [answer, setAnswer] = useState<string | null>(null);
   const [citations, setCitations] = useState<Citation[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [modelUsed, setModelUsed] = useState<string | null>(null);
+  const [cacheHit, setCacheHit] = useState(false);
+
+  const busy = loading || streaming;
 
   const handleAsk = async (queryText: string) => {
-    if (!queryText.trim() || loading) return;
+    if (!queryText.trim() || busy) return;
 
     setLoading(true);
+    setStreaming(false);
     setSlow(false);
     setError(null);
     setAnswer(null);
     setCitations([]);
+    setModelUsed(null);
+    setCacheHit(false);
 
     const slowTimer = setTimeout(() => setSlow(true), 7000);
     const controller = new AbortController();
@@ -50,17 +59,46 @@ export function AskPranav() {
         signal: controller.signal,
       });
 
-      if (!res.ok) {
+      if (!res.ok || !res.body) {
         throw new Error(`Server returned status ${res.status}`);
       }
 
-      const data = (await res.json()) as AskResponse;
+      // The server races three chat models and streams newline-delimited
+      // JSON events from whichever answers first: a "meta" event once a
+      // winner is picked, "token" events as its output streams in, then a
+      // final "done" (or "error") event with the fully resolved answer.
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+      let liveAnswer = "";
 
-      if (data.error) {
-        setError(data.error);
-      } else {
-        setAnswer(data.answer);
-        setCitations(data.citations || []);
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() ?? "";
+
+        for (const line of lines) {
+          if (!line.trim()) continue;
+          const event = JSON.parse(line) as StreamEvent;
+
+          if (event.type === "meta") {
+            clearTimeout(slowTimer);
+            setLoading(false);
+            setStreaming(true);
+            setModelUsed(event.model);
+            setCacheHit(!!event.cacheHit);
+          } else if (event.type === "token") {
+            liveAnswer += event.text;
+            setAnswer(liveAnswer);
+          } else if (event.type === "done") {
+            setAnswer(event.answer);
+            setCitations(event.citations || []);
+          } else if (event.type === "error") {
+            setError(event.message);
+          }
+        }
       }
     } catch (err: any) {
       console.error(err);
@@ -73,6 +111,7 @@ export function AskPranav() {
       clearTimeout(slowTimer);
       clearTimeout(abortTimer);
       setLoading(false);
+      setStreaming(false);
       setSlow(false);
     }
   };
@@ -90,8 +129,8 @@ export function AskPranav() {
           <h3 className="mt-1 text-xs text-slate-400">RAG Assistant powered by NVIDIA NIM</h3>
         </div>
         <span className="flex h-2 w-2 items-center justify-center">
-          <span className={`absolute inline-flex h-2 w-2 rounded-full opacity-75 ${loading ? "animate-ping bg-teal" : "bg-teal/40"}`} />
-          <span className={`relative inline-flex h-2 w-2 rounded-full ${loading ? "bg-teal" : "bg-teal/55"}`} />
+          <span className={`absolute inline-flex h-2 w-2 rounded-full opacity-75 ${busy ? "animate-ping bg-teal" : "bg-teal/40"}`} />
+          <span className={`relative inline-flex h-2 w-2 rounded-full ${busy ? "bg-teal" : "bg-teal/55"}`} />
         </span>
       </div>
 
@@ -100,7 +139,7 @@ export function AskPranav() {
         {SUGGESTED_PROMPTS.map((prompt) => (
           <button
             key={prompt}
-            disabled={loading}
+            disabled={busy}
             onClick={() => {
               setQuestion(prompt);
               handleAsk(prompt);
@@ -118,16 +157,16 @@ export function AskPranav() {
           type="text"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
-          disabled={loading}
+          disabled={busy}
           placeholder="Ask a custom question..."
           className="flex-1 rounded-xl border border-line bg-ink/70 px-3 py-2 text-[0.7rem] text-white placeholder:text-slate-600 outline-none focus:border-teal disabled:opacity-50"
         />
         <button
           type="submit"
-          disabled={loading || !question.trim()}
+          disabled={busy || !question.trim()}
           className="rounded-xl bg-teal px-3 py-2 text-[0.7rem] font-bold text-ink hover:bg-teal/90 disabled:bg-slate-800 disabled:text-slate-500 transition"
         >
-          {loading ? "..." : "Ask"}
+          {busy ? "..." : "Ask"}
         </button>
       </form>
 
@@ -138,20 +177,28 @@ export function AskPranav() {
         </div>
       )}
 
-      {/* Loading state indicator */}
+      {/* Loading state indicator (before a model has won the race) */}
       {loading && (
         <div className="mt-3 rounded-xl border border-line bg-white/[0.01] p-3 text-[0.7rem] text-slate-500 flex items-center gap-2">
           <div className="h-3 w-3 animate-spin rounded-full border border-teal border-t-transparent" />
           {slow
-            ? "Still working — the model is warming up on first use, this can take up to a minute..."
-            : "Embedding query & searching facts..."}
+            ? "Still working — the models are warming up on first use, this can take up to a minute..."
+            : "Embedding query, searching facts, and racing chat models..."}
         </div>
       )}
 
       {/* Response Box */}
       {answer && (
         <Reveal className="mt-3 rounded-xl border border-line bg-white/[0.025] p-3 shadow-glow backdrop-blur">
-          <p className="text-[0.72rem] leading-5 text-slate-200">{answer}</p>
+          {modelUsed && (
+            <p className="mb-2 text-[0.6rem] font-semibold uppercase tracking-wider text-teal/80">
+              {cacheHit ? "⚡ Instant answer (cached)" : `🏁 Won the race: ${friendlyModelName(modelUsed)}`}
+            </p>
+          )}
+          <p className="text-[0.72rem] leading-5 text-slate-200">
+            {answer}
+            {streaming && <span className="ml-0.5 inline-block h-3 w-1 animate-pulse bg-teal align-middle" />}
+          </p>
 
           {/* Citations list */}
           {citations.length > 0 && (

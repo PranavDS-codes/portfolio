@@ -27,6 +27,11 @@ function loadEnv() {
 async function buildSuggestedAnswers() {
   loadEnv();
 
+  // Precomputing the suggested-prompt cache is a build step, not real visitor
+  // traffic — keep it out of the LangSmith project so traces only reflect
+  // live /api/ask requests.
+  process.env.LANGSMITH_TRACING = "false";
+
   if (!process.env.NVIDIA_API_KEY) {
     console.error("❌ Error: NVIDIA_API_KEY environment variable is not defined.");
     process.exit(1);
