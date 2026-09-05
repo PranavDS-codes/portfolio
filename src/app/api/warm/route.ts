@@ -19,6 +19,13 @@ export async function GET() {
   const embedModel = process.env.NVIDIA_EMBED_MODEL || "nvidia/nemotron-3-embed-1b";
   const baseUrl = process.env.NVIDIA_BASE_URL || "https://integrate.api.nvidia.com/v1";
 
+  // A single stuck upstream model must not stall the whole route until the
+  // platform kills the function (observed: a hung chat model held this
+  // route open ~5min before Vercel's edge returned a 504). Bound each
+  // warmup call independently so one cold/overloaded model just reports
+  // warmed: false instead of taking the others down with it.
+  const PING_TIMEOUT_MS = 8000;
+
   async function pingEmbed() {
     try {
       const res = await fetch(`${baseUrl}/embeddings`, {
@@ -33,6 +40,7 @@ export async function GET() {
           encoding_format: "float",
           input_type: "query",
         }),
+        signal: AbortSignal.timeout(PING_TIMEOUT_MS),
       });
       return { model: embedModel, warmed: res.ok };
     } catch (err: any) {
@@ -54,6 +62,7 @@ export async function GET() {
           max_tokens: 1,
           ...leastThinkingParams(model),
         }),
+        signal: AbortSignal.timeout(PING_TIMEOUT_MS),
       });
       return { model, warmed: res.ok };
     } catch (err: any) {
