@@ -76,7 +76,7 @@ export default function Home() {
                 id="publications"
                 eyebrow="Publications"
                 title="Research & Academic Contributions"
-                intro="Two Best Paper awards across 8 publications in applied ML, security, and geoscience — the rest available on Google Scholar."
+                intro="A Best Paper award across 7 published works (plus one paper under review) in applied ML, security, and geoscience — the rest available on Google Scholar."
               >
                 <Publications />
               </Section>

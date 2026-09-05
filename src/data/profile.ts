@@ -128,24 +128,13 @@ export const experience = [
       "Designed CNN and Spark-based intrusion detection workflows, including a CNN-based malware detector achieving 95%+ accuracy.",
       "Built semi-supervised facies classification with Bayesian optimization over well-log data.",
       "Developed scalable feature-engineering workflows for packet-stream and well-log data.",
-      "Published related findings with Best Paper recognition.",
+      "Published related findings across conference and journal venues.",
     ],
     tags: ["PyTorch", "Apache Spark", "SQL", "Python"],
   },
 ];
 
 export const publications = [
-  {
-    title: "Applied Machine Learning and Spark-Driven Workflows for Industrial Intrusion Detection and Lithofacies Classification",
-    authors: "Pranav Pant, et al.",
-    venue: "International Conference on Cybernetics and Machine Learning",
-    year: "2023",
-    featured: true,
-    note: "Best Paper Award / Best Presentation Recognition",
-    abstract: "Developed distributed Spark pipelines to identify security threats and optimized facies mapping algorithms using Bayesian optimization over semi-supervised data distributions.",
-    doi: "https://doi.org/10.1109/ICML.2023.102345",
-    tags: ["Apache Spark", "PyTorch", "SQL"],
-  },
   {
     title: "A Comparative Study of Deep Learning Techniques for Network Intrusion Detection",
     authors: "Pranav Pant, A. Kumar, L. K. Vashishtha, S. Dash, N. K. Ray, S. K. Sahu",
@@ -161,6 +150,7 @@ export const publications = [
     venue: "Cluster Computing",
     year: "2025",
     abstract: "Proposed a hybrid ensemble machine learning approach to improve generalization and interpretability of intrusion detection systems for modern cloud infrastructure.",
+    doi: "https://link.springer.com/article/10.1007/s10586-025-05635-z",
     tags: ["Ensemble Learning", "Cloud Security"],
   },
   {
@@ -169,6 +159,7 @@ export const publications = [
     venue: "Boosting Software Development Using Machine Learning (book chapter)",
     year: "2025",
     abstract: "Examined the integration of software security practices with modern machine-learning techniques for anomaly detection and threat prevention across the development lifecycle.",
+    doi: "https://link.springer.com/chapter/10.1007/978-3-031-88188-6_10",
     tags: ["Anomaly Detection", "Software Security"],
   },
   {
@@ -177,6 +168,7 @@ export const publications = [
     venue: "Predictive Data Security Using AI (Springer book chapter)",
     year: "2022",
     abstract: "Explored strategies for securing sensitive information and data centre infrastructure against cyber-attack vectors targeting strategic and proprietary data.",
+    doi: "https://link.springer.com/chapter/10.1007/978-981-19-6290-5_4",
     tags: ["Data Security", "Cybersecurity"],
   },
   {
@@ -185,6 +177,7 @@ export const publications = [
     venue: "Utkal University Journal of Computing & Communication",
     year: "2024",
     abstract: "Investigated interpretability techniques for intrusion detection models to improve trust and diagnostic understanding of model decisions.",
+    doi: "https://utkaluniversity.ac.in/demystifying-intrusion-detection-a-path-to-enhanced-model-understanding/",
     tags: ["Model Interpretability", "Intrusion Detection"],
   },
   {
@@ -193,6 +186,7 @@ export const publications = [
     venue: "14th Biennial International Conference and Exposition (SPG)",
     year: "2024",
     abstract: "Applied categorical boosting to multi-class imbalanced well-log classification, improving lithofacies prediction accuracy on skewed subsurface datasets.",
+    doi: "https://spgindia.org/Kochi2023-expanded-abstracts/14th-conference-kochi23-top-79.pdf",
     tags: ["CatBoost", "Well Logs", "Facies Classification"],
   },
   {
@@ -205,6 +199,15 @@ export const publications = [
     abstract: "Surveyed image dataset construction and applications for AI/ML-driven intrusion detection in software-defined networking environments.",
     doi: "https://ieeexplore.ieee.org/abstract/document/10430538",
     tags: ["Software-Defined Networking", "Datasets"],
+  },
+  {
+    title: "Beyond Traditional Security: Quantum Machine Learning Based Intrusion Detection",
+    authors: "Pranav Pant, et al.",
+    venue: "Computers & Security",
+    year: "2023",
+    note: "Submitted for publication",
+    abstract: "Explores quantum machine learning as a novel approach to strengthening intrusion detection beyond classical ML methods.",
+    tags: ["Quantum Machine Learning", "Intrusion Detection"],
   },
 ];
 
