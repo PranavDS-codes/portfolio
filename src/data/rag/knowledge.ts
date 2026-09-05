@@ -76,13 +76,6 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     href: "/#education"
   },
   {
-    id: "publication-spark-lithofacies",
-    section: "Publications",
-    title: "Spark-Driven Intrusion Detection & Lithofacies Classification",
-    snippet: "Pranav published a paper titled 'Applied Machine Learning and Spark-Driven Workflows for Industrial Intrusion Detection and Lithofacies Classification' in the International Conference on Cybernetics and Machine Learning (2023). The paper details distributed Spark threat identification and lithofacies mapping optimized using Bayesian optimization over semi-supervised data. It received the Best Paper Award and Best Presentation Recognition.",
-    href: "https://doi.org/10.1109/ICML.2023.102345"
-  },
-  {
     id: "publication-dl-intrusion-comparison",
     section: "Publications",
     title: "Comparative Study of Deep Learning for Intrusion Detection",
@@ -94,42 +87,49 @@ export const knowledgeChunks: KnowledgeChunk[] = [
     section: "Publications",
     title: "Hybrid Ensemble Intrusion Detection Systems",
     snippet: "Pranav co-authored 'Optimising Intrusion Detection Systems: A Hybrid Approach with Ensemble Machine Learning Models', published in Cluster Computing (2025). The paper proposes a hybrid ensemble framework combining signature-based detection with interpretable meta-ensemble classifiers to improve generalization and robustness of intrusion detection systems.",
-    href: "https://scholar.google.com/citations?user=eToK3kMAAAAJ&hl=en"
+    href: "https://link.springer.com/article/10.1007/s10586-025-05635-z"
   },
   {
     id: "publication-software-security-ml",
     section: "Publications",
     title: "Software Security via Machine Learning",
     snippet: "Pranav co-authored the book chapter 'Empowering Software Security: Leveraging Machine Learning for Anomaly Detection and Threat Prevention' in Boosting Software Development Using Machine Learning (2025), examining how machine-learning techniques integrate with software security practices for anomaly detection and threat prevention.",
-    href: "https://scholar.google.com/citations?user=eToK3kMAAAAJ&hl=en"
+    href: "https://link.springer.com/chapter/10.1007/978-3-031-88188-6_10"
   },
   {
     id: "publication-secure-data-centres",
     section: "Publications",
     title: "Secure Information and Data Centres",
     snippet: "Pranav co-authored the book chapter 'Secure Information and Data Centres: An Exploratory Study' in Predictive Data Security Using AI (Springer, 2022), exploring strategies for securing sensitive information and data centre infrastructure against cyber-attack vectors.",
-    href: "https://scholar.google.com/citations?user=eToK3kMAAAAJ&hl=en"
+    href: "https://link.springer.com/chapter/10.1007/978-981-19-6290-5_4"
   },
   {
     id: "publication-demystifying-intrusion",
     section: "Publications",
     title: "Demystifying Intrusion Detection Model Interpretability",
     snippet: "Pranav co-authored 'Demystifying Intrusion Detection: A Path to Enhanced Model Understanding', published in the Utkal University Journal of Computing & Communication (2024), investigating interpretability techniques to improve trust in intrusion detection model decisions.",
-    href: "https://scholar.google.com/citations?user=eToK3kMAAAAJ&hl=en"
+    href: "https://utkaluniversity.ac.in/demystifying-intrusion-detection-a-path-to-enhanced-model-understanding/"
   },
   {
     id: "publication-well-logs-catboost",
     section: "Publications",
     title: "Categorical Boosting for Well-Log Classification",
     snippet: "Pranav co-authored 'Multi-class Imbalanced Classification on Well Logs Using Categorical Boosting Approach', published at the 14th Biennial International Conference and Exposition (SPG, 2024), applying categorical boosting to improve lithofacies prediction accuracy on skewed subsurface well-log datasets.",
-    href: "https://scholar.google.com/citations?user=eToK3kMAAAAJ&hl=en"
+    href: "https://spgindia.org/Kochi2023-expanded-abstracts/14th-conference-kochi23-top-79.pdf"
   },
   {
     id: "publication-sdn-image-datasets",
     section: "Publications",
     title: "Image Datasets for AI/ML in Software-Defined Networking",
-    snippet: "Pranav co-authored 'From Pixels to Insights: Image Datasets for AI/ML in Software-Defined Networking', published at the OITS International Conference on Information Technology (OCIT, 2023), surveying image dataset construction for AI/ML-driven intrusion detection in software-defined networking. This paper received a Best Paper Award — one of Pranav's 2 Best Paper awards across his 8 publications, alongside the Lithofacies Classification paper.",
+    snippet: "Pranav co-authored 'From Pixels to Insights: Image Datasets for AI/ML in Software-Defined Networking', published at the OITS International Conference on Information Technology (OCIT, 2023), surveying image dataset construction for AI/ML-driven intrusion detection in software-defined networking. This paper received a Best Paper Award.",
     href: "https://ieeexplore.ieee.org/abstract/document/10430538"
+  },
+  {
+    id: "publication-quantum-ml-ids",
+    section: "Publications",
+    title: "Quantum Machine Learning for Intrusion Detection (Under Review)",
+    snippet: "Pranav co-authored 'Beyond Traditional Security: Quantum Machine Learning Based Intrusion Detection', submitted to Computers & Security. The paper explores quantum machine learning as a novel approach to strengthening intrusion detection beyond classical ML methods. This work is under review and not yet published.",
+    href: "https://www.linkedin.com/in/pranav-pant-ds/details/publications/"
   },
   {
     id: "project-graph-rag",
